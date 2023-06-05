@@ -1,3 +1,25 @@
-.active-link {
+/* body,
+html {
+  height: 100%;
+} */
+
+#page-container {
+  background-color: rgb(250, 255, 206);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  flex: 1;
+}
+
+/* .active-link {
   color: white !important;
 }
+ */
+/* .footer {
+  width: 100%;
+  bottom: 0;
+}
+ */

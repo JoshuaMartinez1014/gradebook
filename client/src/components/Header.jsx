@@ -18,14 +18,14 @@ function Header(props) {
                 className="nav-link"
                 /* activeClassName="active-link" */
               >
-                About
+                Student
               </NavLink>
               <NavLink to="/projects" className="nav-link">
-                Projects
+                Grades
               </NavLink>
 
               <NavLink to="/contactme" className="nav-link">
-                Contact
+                Classes
               </NavLink>
             </Nav>
           </Navbar.Collapse>
