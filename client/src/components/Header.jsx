@@ -2,13 +2,13 @@ import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import GradeBookImage from "../img/Gradebook.svg";
-import "../styles/global.css";
+/* import "../styles/global.css"; */
 
 function Header(props) {
   return (
     <>
       <Navbar bg="dark" expand="lg" variant="dark">
-        <Container fluid style={{ height: "50px" }}>
+        <Container fluid>
           <Navbar.Brand href="/" className="flex-fill header-brand">
             <img
               src={GradeBookImage}
@@ -27,11 +27,11 @@ function Header(props) {
               >
                 Login
               </NavLink>
-              <NavLink to="/projects" className="nav-link">
+              <NavLink to="/grades" className="nav-link">
                 Grades
               </NavLink>
 
-              <NavLink to="/contactme" className="nav-link">
+              <NavLink to="/classes" className="nav-link">
                 Classes
               </NavLink>
             </Nav>

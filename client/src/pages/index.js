@@ -1,3 +1,4 @@
 export { default as HomePage } from "./HomePage.jsx";
-export { default as Login } from "./Login.jsx";
-export { default as Signup } from "./Signup.jsx";
+export { default as LoginPage } from "./LoginPage.jsx";
+export { default as SignupPage } from "./SignupPage.jsx";
+export { default as GradePage } from "./GradePage.jsx";
