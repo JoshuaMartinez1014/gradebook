@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const gradeSchema = new Schema({
+const assignmentSchema = new Schema({
   assignment_name: {
     type: String,
     required: true
@@ -17,6 +17,6 @@ const gradeSchema = new Schema({
   }
 });
 
-const Grade = model('Grade', gradeSchema);
+const Assignment = model('Assignment', assignmentSchema);
 
-module.exports = Grade;
+module.exports = Assignment;

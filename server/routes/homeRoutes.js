@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Grade, Class } = require('../models');
-const withAuth = require('../utils/auth');
+//const withAuth = require('../utils/auth');
 
 
 // GET route for homepage
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 });
 
 // GET route for a dashboard
-router.get('/dashboard', withAuth, async (req, res) => {
+router.get('/dashboard', async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {

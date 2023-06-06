@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Grade, Class, Assignment } = require('../../models');
-const withAuth = require('../../utils/auth');
+//const withAuth = require('../../utils/auth');
 
 
 // GET all assignments
