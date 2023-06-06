@@ -8,21 +8,21 @@ function SideNav() {
     <Nav className="sidenav">
       <NavLink
         className="sidenav-link nav-link"
-        activeClassName="active"
+        activeclassname="active"
         to="/link1"
       >
         Syllabus &nbsp;&nbsp;&nbsp;&nbsp;&gt;
       </NavLink>
       <NavLink
         className="sidenav-link nav-link"
-        activeClassName="active"
+        activeclassname="active"
         to="/link2"
       >
         Teachers &nbsp;&nbsp;&nbsp;&nbsp;&gt;
       </NavLink>
       <NavLink
         className="sidenav-link nav-link"
-        activeClassName="active"
+        activeclassname="active"
         to="/link3"
       >
         Calender &nbsp;&nbsp;&nbsp;&nbsp;&gt;
