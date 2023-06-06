@@ -5,7 +5,7 @@ import "../styles/global.css";
 function Footer() {
   return (
     <footer className="footer bg-dark text-center py-3">
-      <Container>
+      <Container style={{ height: "5px" }}>
         <Row>
           <Col className="text-white">
             &copy; {new Date().getFullYear()} Sean, Belane, Josh, Noah, All
