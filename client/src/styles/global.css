@@ -1,11 +1,16 @@
+:root {
+  --primary-color: #212529;
+  --secondary-color: #38393a;
+  --page-color: rgb(250, 255, 206);
+}
 body,
 html {
-  font-size: 1.2rem;
+  font-size: 1rem;
   /* makes all font larger */
 }
 
 #page-container {
-  background-color: rgb(250, 255, 206);
+  background-color: var(--page-color);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -14,9 +19,9 @@ html {
   */
 }
 
-#content-wrap {
-  flex: 1;
-  /* helps footer sit on bottom */
+#page-content {
+  display: flex;
+  justify-content: space-between;
 }
 
 .header-brand {
@@ -31,6 +36,59 @@ html {
   /* Equal width for each cell, 100%/5 cells */
 }
 
+.sidenav {
+  font-size: 1.2rem;
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 150px;
+  height: 100vh;
+  flex-shrink: 0;
+}
+
+.sidenav > .sidenav-link {
+  color: rgb(255, 255, 255);
+  border-bottom: 1px solid #fff;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.sidenav > .sidenav-link:hover {
+  color: white;
+  background-color: rgb(114, 114, 114);
+}
+
+.sidenav > .sidenav-link.active {
+  background-color: rgb(250, 255, 206);
+  color: #030000;
+}
+
+@media (max-width: 1030px) {
+  /* sets sidebar to the top of the screen */
+  .sidenav {
+    font-size: 1rem;
+    flex-direction: row;
+    width: 100vw;
+    height: auto;
+  }
+
+  .sidenav > .sidenav-link {
+    width: auto;
+    padding: 10px;
+    border-right: solid white 1px;
+  }
+
+  #page-content {
+    flex-direction: column;
+  }
+}
+
+/* ========================= */
+/* Deleted CSS  */
+
 /* .active-link {
   color: white !important;
 }
@@ -40,3 +98,44 @@ html {
   bottom: 0;
 }
  */
+
+/* #content-wrap {
+   flex: 1;
+   helps footer sit on bottom
+ } */
+
+/* ========================= */
+/* Backup CSS  */
+
+/* .sidenav {
+  border: solid white 2px;
+  font-size: 1.4rem;
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 150px;
+  height: 100vh;
+  flex-shrink: 0;
+}
+
+.sidenav > .sidenav-link {
+  color: rgb(255, 255, 255);
+  border-bottom: 1px solid #fff;
+  width: 100%;
+  padding: 10px 0 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.sidenav > .sidenav-link:hover {
+  color: white;
+  background-color: rgb(114, 114, 114);
+}
+
+.sidenav > .sidenav-link.active {
+  background-color: rgb(250, 255, 206);
+  color: #030000;
+} */
+
+/* ================== */

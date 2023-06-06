@@ -7,13 +7,22 @@ import GradeBookImage from "../img/Gradebook.svg";
 function Header(props) {
   return (
     <>
-      <Navbar bg="dark" expand="lg" variant="dark">
+      <Navbar
+        bg="dark"
+        expand="lg"
+        variant="dark"
+        style={{ borderBottom: "solid white 6px", fontSize: "1.6rem" }}
+      >
         <Container fluid>
-          <Navbar.Brand href="/" className="flex-fill header-brand">
+          <Navbar.Brand
+            href="/"
+            className="flex-fill header-brand"
+            style={{ fontSize: "1.6rem" }}
+          >
             <img
               src={GradeBookImage}
               alt="apple with a letter G inside"
-              style={{ height: "35px", marginRight: "10px" }}
+              style={{ height: "40px", marginRight: "10px" }}
             />{" "}
             GradeBook
           </Navbar.Brand>

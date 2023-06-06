@@ -4,7 +4,7 @@ import "../styles/global.css";
 
 function GradesPage() {
   return (
-    <div style={{ marginTop: "50px" }}>
+    <div style={{ marginTop: "50px", width: "800px" }}>
       <h1 style={{ marginLeft: "10%" }}>Grades</h1>
       <br />
       <Container className="d-flex justify-content-center">
