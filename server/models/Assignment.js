@@ -5,11 +5,10 @@ const assignmentSchema = new Schema({
     type: String,
     required: true
   },
-  // grade: {
-  //   type: Schema.Types.ObjectId,
-  //   required: true,
-  //   ref: "Grade"
-  // },
+  due_date: {
+    type: Date,
+    required: true
+  },
   class: {
     type: Schema.Types.ObjectId,
     required: true,
