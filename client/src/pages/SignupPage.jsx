@@ -76,13 +76,23 @@ function Signup() {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                type="email"
-                name="email"
+              <Form.Check
+                type="radio"
+                id="student-radio"
+                name="role"
                 onChange={handleChange}
-                placeholder="Enter your email"
+                value="student"
                 required
+                label="Select if Student"
+              />
+              <Form.Check
+                type="radio"
+                id="teacher-radio"
+                name="role"
+                onChange={handleChange}
+                value="teacher"
+                required
+                label="Select if Teacher"
               />
             </Form.Group>
 
