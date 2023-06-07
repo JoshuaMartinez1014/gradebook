@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [formData, setFormData] = useState({});
@@ -55,7 +56,7 @@ function Login() {
             </Button>
             <br />
             <br />
-            <a href="/signup">Or Sign Up Here!</a>
+            <Link to="/signup">Or Sign Up Here!</Link>
           </Form>
         </Container>
       </div>
