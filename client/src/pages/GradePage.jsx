@@ -7,6 +7,18 @@ function GradesPage() {
     <div style={{ marginTop: "50px", width: "800px" }}>
       <h1 style={{ marginLeft: "10%" }}>Grades</h1>
       <br />
+      <h2>class</h2>
+      <h3>Overall Grade $$$$</h3>
+      <p>HW$$$$$ Grade $$$$</p>
+      <p>HW$$$$$ Grade $$$$</p>
+      <p>HW$$$$$ Grade $$$$</p>
+      <p>HW$$$$$ Grade $$$$</p>
+      <h2>class</h2>
+      <h3>Overall Grade $$$$</h3>
+      <p>HW$$$$$ Grade $$$$</p>
+      <p>HW$$$$$ Grade $$$$</p>
+      <p>HW$$$$$ Grade $$$$</p>
+      <p>HW$$$$$ Grade $$$$</p>
       <Container className="d-flex justify-content-center">
         <Table striped bordered className="grades-table">
           <thead>
