@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
+/* import { SignupPage } from "."; */
 
 function Signup() {
   const [formData, setFormData] = useState();
+
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch("http://localhost:3001/api/user", {
+    fetch("/api/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
