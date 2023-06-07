@@ -2,24 +2,25 @@ import { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 
 function Login() {
-
   const [formData, setFormData] = useState({});
-  function handleChange (e) {
-    setFormData({...formData, [e.target.name]: e.target.value})
+  function handleChange(e) {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   }
-  
-  function handleSubmit (e) {
+
+  function handleSubmit(e) {
     e.preventDefault();
 
-    fetch('http://localhost:3001/api/user/login', {
-      method: 'POST',
+    fetch("http://localhost:3001/api/user/login", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData)
-    }).then(response => response.json()).then(data=> {
-      console.log(data)
+      body: JSON.stringify(formData),
     })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      });
   }
   return (
     <>
@@ -27,7 +28,6 @@ function Login() {
         <h1 style={{ marginLeft: "1%" }}>Login</h1>
         <Container className=" mt-3">
           <Form className="mt-3" style={{}} onSubmit={handleSubmit}>
-
             <Form.Group className="mb-3">
               <Form.Label>Email</Form.Label>
               <Form.Control
@@ -64,3 +64,5 @@ function Login() {
 }
 
 export default Login;
+
+/* ADD VALUES LATER */
