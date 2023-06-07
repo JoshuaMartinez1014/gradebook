@@ -10,7 +10,7 @@ function Login() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch("http://localhost:3001/api/user/login", {
+    fetch("/api/user/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
