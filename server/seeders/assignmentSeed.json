@@ -2,21 +2,25 @@
     {
         "_id": "6480aeabce912674ff0c0123",
         "assignment_name": "HW 1",
+        "due_date": "2023-06-01",
         "class": "6480ad917db945d3c0c54906"
     },
     {
         "_id": "6480aebd9176cda0c1818877",
         "assignment_name": "HW 2",
+        "due_date": "2023-06-02",
         "class": "6480ad917db945d3c0c54906"
     },
     {
         "_id": "6480aeccf52dfdd1ad854c7a",
         "assignment_name": "HW 3",
+        "due_date": "2023-06-07",
         "class": "6480ad917db945d3c0c54906"
     },
     {
         "_id": "6480aed724805ca25d2c3958",
         "assignment_name": "HW 4",
+        "due_date": "2023-06-15",
         "class": "6480ad917db945d3c0c54906"
     }
 ]

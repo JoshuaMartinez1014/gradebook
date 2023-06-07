@@ -18,8 +18,10 @@ function Calendar() {
         initialView="dayGridMonth"
         height="100vh"
         events={[
-          { title: "event 1", date: "2023-06-01" },
-          { title: "event 2", date: "2023-06-02" },
+          { title: "HW 1", date: "2023-06-01" },
+          { title: "HW 2", date: "2023-06-02" },
+          { title: "HW 3", date: "2023-06-07" },
+          { title: "HW 4", date: "2023-06-15" },
         ]}
       />
     </div>
