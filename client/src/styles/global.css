@@ -40,12 +40,6 @@ html {
   /* keeps brand title and image centered */
 }
 
-.grades-table th,
-.grades-table td {
-  width: 20%;
-  /* Equal width for each cell, 100%/5 cells */
-}
-
 .sidenav {
   font-size: 1.2rem;
   background-color: var(--secondary-color);
@@ -79,6 +73,31 @@ html {
 
 /* middle clicking links retain properties */
 .sidenav > .sidenav-link:focus {
+  color: #000000;
+}
+
+.grades-table th,
+.grades-table td {
+  width: 20%;
+  /* Equal width for each cell, 100%/5 cells */
+}
+
+/* calender */
+tbody {
+  background-color: white;
+}
+
+thead {
+  background-color: grey;
+}
+
+/* calender header text */
+.fc-col-header-cell-cushion {
+  color: #000000;
+}
+
+/* calender body text */
+.fc-daygrid-day-number {
   color: #000000;
 }
 
