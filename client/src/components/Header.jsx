@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import GradeBookImage from "../img/Gradebook.svg";
 /* import "../styles/global.css"; */
 
@@ -19,18 +19,20 @@ function Header(props) {
         }}
       >
         <Container fluid>
-          <Navbar.Brand
-            href="/"
-            className="flex-fill header-brand"
-            style={{ fontSize: "2rem" }}
-          >
-            <img
-              src={GradeBookImage}
-              alt="apple with a letter G inside"
-              style={{ height: "40px", marginRight: "10px" }}
-            />{" "}
-            GradeBook
-          </Navbar.Brand>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Navbar.Brand
+              href="/"
+              className="flex-fill header-brand"
+              style={{ fontSize: "2rem" }}
+            >
+              <img
+                src={GradeBookImage}
+                alt="apple with a letter G inside"
+                style={{ height: "40px", marginRight: "10px" }}
+              />{" "}
+              GradeBook
+            </Navbar.Brand>
+          </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto d-flex justify-content-end flex-fill">
