@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 /* import { SignupPage } from "."; */
 
 function Signup() {
@@ -103,7 +104,7 @@ function Signup() {
             </Button>
             <br />
             <br />
-            <a href="/login">Already Have an Account?</a>
+            <Link to="/login">Already Have an Account?</Link>
           </Form>
         </Container>
       </div>
