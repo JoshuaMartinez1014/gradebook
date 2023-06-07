@@ -9,7 +9,11 @@ const classSchema = new Schema({
     type: Schema.Types.ObjectId,
     required: true,
     ref: "User"
-  }
+  },
+  class_students: [{
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  }]
 });
 
 const Class = model('Class', classSchema);
