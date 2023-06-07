@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
+import { SignupPage } from ".";
 
-function Signup() {
+function SignupPage() {
   const [formData, setFormData] = useState();
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -109,4 +110,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default SignupPage;
