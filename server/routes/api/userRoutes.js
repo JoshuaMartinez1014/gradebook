@@ -64,8 +64,9 @@ router.delete("/:id", async (req, res) => {
 // Login
 router.post("/login", async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { name: req.body.name } });
-
+    const userData = await User.findOne({ email: req.body.email });
+      console.log(req.body.email)
+      console.log(userData)
     if (!userData) {
       res
         .status(400)
@@ -73,11 +74,7 @@ router.post("/login", async (req, res) => {
       return;
     }
 
-    const realUser = userData.get({ plain: true });
-    console.log(realUser);
-    console.log(req.body.password);
-
-    const validPassword = await userData.checkPassword(req.body.password);
+    const validPassword = await userData.verify(req.body.password);
 
     console.log(validPassword);
 
@@ -88,12 +85,7 @@ router.post("/login", async (req, res) => {
       return;
     }
 
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-
       res.json({ user: userData, message: "You are now logged in!" });
-    });
   } catch (err) {
     res.status(400).json(err);
   }
