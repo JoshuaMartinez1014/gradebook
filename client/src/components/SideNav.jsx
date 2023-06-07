@@ -41,6 +41,13 @@ function SideNav() {
       >
         Calendar &nbsp;&nbsp;&nbsp;&nbsp;&gt;
       </NavLink>
+      <NavLink
+        className="sidenav-link nav-link"
+        activeclassname="active"
+        to="/link3"
+      >
+        Assignments &nbsp;&nbsp;&nbsp;&nbsp;&gt;
+      </NavLink>
     </Nav>
   );
 }
