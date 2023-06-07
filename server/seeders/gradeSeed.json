@@ -1,0 +1,47 @@
+[
+    {
+      "grade": "90",
+      "student": "6480ace22c3f10a1b7355ae0",
+      "assignment": "6480aeabce912674ff0c0123"
+    },
+    {
+      "grade": "80",
+      "student": "6480acff317e874d41a767cb",
+      "assignment": "6480aeabce912674ff0c0123"
+    },
+    {
+      "grade": "70",
+      "student": "6480ad1958fcb8a932217b9f",
+      "assignment": "6480aeabce912674ff0c0123"
+    },
+    {
+      "grade": "90",
+      "student": "6480ace22c3f10a1b7355ae0",
+      "assignment": "6480aebd9176cda0c1818877"
+    },
+    {
+      "grade": "80",
+      "student": "6480acff317e874d41a767cb",
+      "assignment": "6480aebd9176cda0c1818877"
+    },
+    {
+      "grade": "70",
+      "student": "6480ad1958fcb8a932217b9f",
+      "assignment": "6480aebd9176cda0c1818877"
+    },
+    {
+      "grade": "90",
+      "student": "6480ace22c3f10a1b7355ae0",
+      "assignment": "6480aeccf52dfdd1ad854c7a"
+    },
+    {
+      "grade": "80",
+      "student": "6480acff317e874d41a767cb",
+      "assignment": "6480aeccf52dfdd1ad854c7a"
+    },
+    {
+      "grade": "70",
+      "student": "6480ad1958fcb8a932217b9f",
+      "assignment": "6480aeccf52dfdd1ad854c7a"
+    }
+]

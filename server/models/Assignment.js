@@ -5,11 +5,11 @@ const assignmentSchema = new Schema({
     type: String,
     required: true
   },
-  grade: {
-    type: Schema.Types.ObjectId,
-    required: true,
-    ref: "Grade"
-  },
+  // grade: {
+  //   type: Schema.Types.ObjectId,
+  //   required: true,
+  //   ref: "Grade"
+  // },
   class: {
     type: Schema.Types.ObjectId,
     required: true,
