@@ -11,13 +11,18 @@ function Header(props) {
         bg="dark"
         expand="lg"
         variant="dark"
-        style={{ borderBottom: "solid white 6px", fontSize: "1.6rem" }}
+        style={{
+          borderBottom: "solid white 6px",
+          fontSize: "1.4rem",
+          boxShadow: "2px 0px 8px 0px rgba(0, 0, 0, 0.75)",
+          paddingTop: "10px",
+        }}
       >
         <Container fluid>
           <Navbar.Brand
             href="/"
             className="flex-fill header-brand"
-            style={{ fontSize: "1.6rem" }}
+            style={{ fontSize: "2rem" }}
           >
             <img
               src={GradeBookImage}
@@ -47,7 +52,6 @@ function Header(props) {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <div className="water"></div>
     </>
   );
 }

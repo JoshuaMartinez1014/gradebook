@@ -1,6 +1,6 @@
 /* import { UserContext } from "./ctx/UserContext"; */
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { HomePage, LoginPage, SignupPage, GradePage } from "./pages";
+import { HomePage, LoginPage, SignupPage, GradePage, Calendar } from "./pages";
 import { Header, Footer, SideNav } from "./components";
 import "./styles/global.css";
 
@@ -10,14 +10,15 @@ function App() {
       <div id="page-container">
         <Router>
           <Header />
-          <div id="page-content">
+          <div id="page-main">
             <SideNav />{" "}
-            <div style={{ display: "flex", justifyContent: "center", flex: 1 }}>
+            <div id="page-content" style={{}}>
               <Routes>
                 <Route path="/" exact element={<HomePage />} />
                 <Route path="/login" exact element={<LoginPage />} />
                 <Route path="/signup" element={<SignupPage />} />
                 <Route path="/grades" element={<GradePage />} />
+                <Route path="/calendar" element={<Calendar />} />
               </Routes>{" "}
             </div>
           </div>

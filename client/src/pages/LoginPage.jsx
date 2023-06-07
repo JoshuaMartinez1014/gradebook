@@ -3,10 +3,10 @@ import { Container, Form, Button } from "react-bootstrap";
 function Login() {
   return (
     <>
-      <div style={{ marginTop: "50px" }}>
-        <h1 style={{ marginLeft: "10%" }}>Login</h1>
-        <Container className="d-flex justify-content-center mt-3">
-          <Form className="mt-3" style={{ width: "800px" }}>
+      <div style={{ marginTop: "50px", flexGrow: 0.5, flexBasis: "20%" }}>
+        <h1 style={{ marginLeft: "1%" }}>Login</h1>
+        <Container className=" mt-3">
+          <Form className="mt-3" style={{}}>
             <Form.Group className="mb-3">
               <Form.Label>Email</Form.Label>
               <Form.Control

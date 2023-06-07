@@ -9,6 +9,7 @@ html {
   /* makes all font larger */
 }
 
+/* All of the html */
 #page-container {
   background-color: var(--page-color);
   display: flex;
@@ -19,9 +20,18 @@ html {
   */
 }
 
-#page-content {
+/* everything except the header */
+#page-main {
   display: flex;
   justify-content: space-between;
+  /* sperates content from nav */
+}
+
+/* everything except header and sidenav */
+#page-content {
+  display: flex;
+  justify-content: center;
+  flex: 1;
 }
 
 .header-brand {
@@ -45,6 +55,7 @@ html {
   width: 150px;
   height: 100vh;
   flex-shrink: 0;
+  box-shadow: 2px 0px 8px 0px rgba(0, 0, 0, 0.75);
 }
 
 .sidenav > .sidenav-link {
@@ -62,17 +73,30 @@ html {
 }
 
 .sidenav > .sidenav-link.active {
-  background-color: rgb(250, 255, 206);
+  background-color: var(--page-color);
   color: #030000;
+}
+
+/* middle clicking links retain properties */
+.sidenav > .sidenav-link:focus {
+  color: #000000;
 }
 
 @media (max-width: 1030px) {
   /* sets sidebar to the top of the screen */
+  .nav {
+    flex-wrap: nowrap !important;
+  }
   .sidenav {
     font-size: 1rem;
     flex-direction: row;
     width: 100vw;
     height: auto;
+    /* scrollbar */
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
   }
 
   .sidenav > .sidenav-link {
@@ -81,8 +105,32 @@ html {
     border-right: solid white 1px;
   }
 
-  #page-content {
+  /* This is the scrollbar track */
+  .sidenav::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+    background: #f1f1f1;
+  }
+
+  /* This is the scrollbar handle */
+  .sidenav::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* When you hover over the scrollbar */
+  .sidenav::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  #page-main {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 330px) {
+  #page-content {
+    justify-content: start;
+    padding-left: 15px;
   }
 }
 
