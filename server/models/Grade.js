@@ -2,16 +2,16 @@ const { Schema, model } = require('mongoose');
 
 const gradeSchema = new Schema({
   grade: {
-    type: String,
+    type: Number,
     required: true,
     // The validator checks that the grade is A, B, C, D, or F
-    validate: {
-        validator: function (value) {
-            const letterGrade = ["A", "B", "C", "D", "F"];
-            return letterGrade.includes(value)
-        },
-        message: "That is an invalid letter"
-    }
+    // validate: {
+    //     validator: function (value) {
+    //         const letterGrade = ["A", "B", "C", "D", "F"];
+    //         return letterGrade.includes(value)
+    //     },
+    //     message: "That is an invalid letter"
+    // }
   },
   student: {
     type: Schema.Types.ObjectId,
