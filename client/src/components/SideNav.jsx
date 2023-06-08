@@ -24,6 +24,7 @@ function SideNav() {
         className="sidenav-link nav-link"
         activeclassname="active"
         to="/link1"
+        wa
       >
         Syllabus &nbsp;&nbsp;&nbsp;&nbsp;&gt;
       </NavLink>
@@ -46,7 +47,7 @@ function SideNav() {
         activeclassname="active"
         to="/link3"
       >
-        Assignments &nbsp;&nbsp;&nbsp;&nbsp;&gt;
+        Assignments &gt;
       </NavLink>
     </Nav>
   );
