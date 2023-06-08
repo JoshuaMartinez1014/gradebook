@@ -22,22 +22,10 @@ router.get("/user/:id", async (req, res) => {
                 path: 'assignment',
                 populate: {
                     path: 'grade',
+                    match: { student: req.params.id }
                 }
             }).
             exec();
-        // User.findOne({ name: 'John' }).populate({
-        //     path: 'posts',
-        //     populate: {
-        //         path: 'comments',
-        //         model: 'Comment',
-        //         populate: {
-        //             path: 'author',
-        //             model: 'User'
-        //         }
-        //     }
-        // }).exec((err, user) => {
-        //     console.log(user);
-        // });
         //include: Assignment? Class?
         res.status(200).json(classData);
     } catch (err) {
