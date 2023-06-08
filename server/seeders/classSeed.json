@@ -2,6 +2,7 @@
     {
       "_id" : "6480ad917db945d3c0c54906",
       "class_name": "Full Stack Bootcamp",
-      "teacher": "6480ad2825cad0db06879f4c"
+      "teacher": "6480ad2825cad0db06879f4c",
+      "students": ["6480ad1958fcb8a932217b9f", "6480acff317e874d41a767cb", "6480ace22c3f10a1b7355ae0"]
     }
 ]

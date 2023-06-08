@@ -14,6 +14,18 @@ router.get("/", async (req, res) => {
     }
 });
 
+router.get("/user/:id", async (req, res) => {
+    console.log("test")
+    try {
+        const gradeData = await Grade.find({student: req.params.id}).populate('assignment').
+        exec();
+        //include: Assignment? Class?
+        res.status(200).json(gradeData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 // Get a single grade
 router.get("/:id", async (req, res) => {
     try {
