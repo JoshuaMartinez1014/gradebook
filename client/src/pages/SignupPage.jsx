@@ -7,12 +7,19 @@ function Signup() {
   const [formData, setFormData] = useState();
 
   function handleChange(e) {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (e.target.name === "role") {
+      setFormData({
+        ...formData,
+        isTeacher: e.target.value === "teacher",
+      });
+    } else {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    }
   }
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch("/", {
+    fetch("api/user/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -26,8 +33,14 @@ function Signup() {
   }
   return (
     <>
-      <div style={{ marginTop: "50px" }}>
-        <h1 style={{ marginLeft: "10%" }}>Signup</h1>
+      <div style={{ marginTop: "50px", flexGrow: 0.5, flexBasis: "20%" }}>
+        <h1
+          style={{
+            marginLeft: "1%",
+          }}
+        >
+          Signup
+        </h1>
         <Container className="d-flex justify-content-center mt-3">
           <Form
             className="mt-3"

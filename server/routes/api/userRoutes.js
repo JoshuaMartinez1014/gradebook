@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const { User } = require("../../models");
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
 
 // Get all users
 router.get("/", async (req, res) => {
@@ -17,25 +19,33 @@ router.get("/:id", async (req, res) => {
     const userData = await User.findById(req.params.id);
     res.status(200).json(userData);
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json({ err, message: "get /user:id route" });
   }
 });
 
 // Create a new user
 router.post("/signup", async (req, res) => {
-  console.log("route is working");
   try {
     const userData = await User.create(req.body);
+    const { password, ...modifiedUser } = userData;
 
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-    });
+    const token = jwt.sign(
+      {
+        email: userData.email,
+        id: userData._id,
+        fname: userData.fname,
+        lname: userData.lname,
+      },
+      process.env.JWT_SECRET
+    );
 
-    res.status(200).json(userData);
+    res
+      .cookie("auth-cookie", token)
+      .status(200)
+      .json({ status: "success", payload: modifiedUser });
   } catch (err) {
     console.log(err);
-    res.status(400).json(err);
+    res.status(400).json({ err, message: "post /signup route" });
   }
 });
 
@@ -65,8 +75,8 @@ router.delete("/:id", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({ email: req.body.email });
-      console.log(req.body.email)
-      console.log(userData)
+    console.log(req.body.email);
+    console.log(userData);
     if (!userData) {
       res
         .status(400)
@@ -85,21 +95,41 @@ router.post("/login", async (req, res) => {
       return;
     }
 
-      res.json({ user: userData, message: "You are now logged in!" });
+    const token = jwt.sign(
+      {
+        email: userData.email,
+        id: userData._id,
+        fname: userData.fname,
+        lname: userData.lname,
+      },
+      process.env.JWT_SECRET
+    );
+
+    const { password, ...modifiedUser } = userData;
+
+    res
+      .cookie("auth-cookie", token)
+      .json({ status: "success login", payload: modifiedUser });
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
+router.post("/verify"),
+  async (req, res) => {
+    const cookie = req.cookies["auth-cookie"];
+    if (!cookie) return res.status(401).json({ msg: "un-authorized" });
+
+    const isVerified = jwt.verify(cookie, process.env.JWT_SECRET);
+    if (!isVerified) return res.status(401).json({ msg: "un-authorized" });
+
+    const user = await User.findOne({ _id: isVerified.id }).select("-password");
+    if (!user) return res.status(401).json({ msg: "authorized" });
+
+    return res.status(200).json({ status: "success", payload: user });
+  };
+
 // destroys the session (Logout)
-router.post("/logout", (req, res) => {
-  if (req.session.logged_in) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).end();
-  }
-});
+router.post("/logout", (req, res) => {});
 
 module.exports = router;
