@@ -7,6 +7,7 @@ const HomePage = () => {
   return (
     <>
       {/* <h1>{currUser.fname}</h1> */}
+      <h1></h1>
       <div
         style={{
           display: "flex",
