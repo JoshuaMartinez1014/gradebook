@@ -1,8 +1,12 @@
 import placeholder from "../img/placeholder.png";
+import { useUserContext } from "../ctx/UserContext";
 
 const HomePage = () => {
+  const { currUser } = useUserContext();
+  console.log(currUser);
   return (
     <>
+      <h1></h1>
       <div
         style={{
           display: "flex",

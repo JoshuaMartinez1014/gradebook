@@ -7,7 +7,7 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use((req, res, next) => {
+/* app.use((req, res, next) => {
   // Allow requests from any origin
   res.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -21,18 +21,18 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
   next();
-});
+}); */
 
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use(routes);
+
 // if we're in production, serve client/build as static assets
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));
 }
-
-app.use(routes);
 
 db.once("open", () => {
   app.listen(PORT, () => console.log(`Now listening on localhost: ${PORT}`));

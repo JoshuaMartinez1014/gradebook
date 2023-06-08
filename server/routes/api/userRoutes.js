@@ -3,6 +3,8 @@ const { User } = require("../../models");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
+console.log("user routes");
+
 // Get all users
 router.get("/", async (req, res) => {
   try {
@@ -113,19 +115,24 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.post("/verify"),
-  async (req, res) => {
-    const cookie = req.cookies["auth-cookie"];
-    if (!cookie) return res.status(401).json({ msg: "un-authorized" });
+router.post("/verify", async (req, res) => {
+  console.log("verify user");
+  const cookie = req.cookies["auth-cookie"];
+  if (!cookie) return res.status(401).json({ msg: "un-authorized" });
 
-    const isVerified = jwt.verify(cookie, process.env.JWT_SECRET);
-    if (!isVerified) return res.status(401).json({ msg: "un-authorized" });
+  console.log(cookie);
 
-    const user = await User.findOne({ _id: isVerified.id }).select("-password");
-    if (!user) return res.status(401).json({ msg: "authorized" });
+  const isVerified = jwt.verify(cookie, process.env.JWT_SECRET);
+  if (!isVerified) return res.status(401).json({ msg: "un-authorized" });
 
-    return res.status(200).json({ status: "success", payload: user });
-  };
+  console.log(isVerified);
+
+  const user = await User.findOne({ _id: isVerified.id }).select("-password");
+  if (!user) return res.status(401).json({ msg: "authorized" });
+
+  console.log(user);
+  return res.status(200).json({ status: "success", payload: user });
+});
 
 // destroys the session (Logout)
 router.post("/logout", (req, res) => {});

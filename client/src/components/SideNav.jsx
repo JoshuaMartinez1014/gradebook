@@ -24,7 +24,6 @@ function SideNav() {
         className="sidenav-link nav-link"
         activeclassname="active"
         to="/link1"
-        wa
       >
         Syllabus &nbsp;&nbsp;&nbsp;&nbsp;&gt;
       </NavLink>
