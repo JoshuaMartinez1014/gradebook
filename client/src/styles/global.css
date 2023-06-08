@@ -3,6 +3,7 @@
   --secondary-color: #38393a;
   --page-color: rgb(250, 255, 206);
 }
+
 body,
 html {
   font-size: 1rem;
@@ -11,7 +12,8 @@ html {
 
 /* All of the html */
 #page-container {
-  background-color: var(--page-color);
+  background: rgb(139, 139, 109);
+  background: linear-gradient(90deg, rgba(139, 139, 109, 1) 0%, rgba(184, 190, 124, 1) 35%, rgba(139, 139, 109, 1) 100%);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -52,7 +54,7 @@ html {
   box-shadow: 2px 0px 8px 0px rgba(0, 0, 0, 0.75);
 }
 
-.sidenav > .sidenav-link {
+.sidenav>.sidenav-link {
   color: rgb(255, 255, 255);
   border-bottom: 1px solid #fff;
   width: 100%;
@@ -61,18 +63,18 @@ html {
   justify-content: center;
 }
 
-.sidenav > .sidenav-link:hover {
+.sidenav>.sidenav-link:hover {
   color: white;
   background-color: rgb(114, 114, 114);
 }
 
-.sidenav > .sidenav-link.active {
+.sidenav>.sidenav-link.active {
   background-color: var(--page-color);
   color: #030000;
 }
 
 /* middle clicking links retain properties */
-.sidenav > .sidenav-link:focus {
+.sidenav>.sidenav-link:focus {
   color: #000000;
 }
 
@@ -102,10 +104,12 @@ thead {
 }
 
 @media (max-width: 1030px) {
+
   /* sets sidebar to the top of the screen */
   .nav {
     flex-wrap: nowrap !important;
   }
+
   .sidenav {
     font-size: 1rem;
     flex-direction: row;
@@ -118,7 +122,7 @@ thead {
     scrollbar-color: #888 #f1f1f1;
   }
 
-  .sidenav > .sidenav-link {
+  .sidenav>.sidenav-link {
     width: auto;
     padding: 10px;
     border-right: solid white 1px;
