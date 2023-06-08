@@ -3,6 +3,7 @@
       "_id" : "6480ad917db945d3c0c54906",
       "class_name": "Full Stack Bootcamp",
       "teacher": "6480ad2825cad0db06879f4c",
-      "students": ["6480ad1958fcb8a932217b9f", "6480acff317e874d41a767cb", "6480ace22c3f10a1b7355ae0"]
+      "students": ["6480ad1958fcb8a932217b9f", "6480acff317e874d41a767cb", "6480ace22c3f10a1b7355ae0"],
+      "assignment": ["6480aeabce912674ff0c0123", "6480aebd9176cda0c1818877", "6480aeccf52dfdd1ad854c7a", "6480aed724805ca25d2c3958"]
     }
 ]

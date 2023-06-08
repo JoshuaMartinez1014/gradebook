@@ -13,7 +13,11 @@ const assignmentSchema = new Schema({
     type: Schema.Types.ObjectId,
     required: true,
     ref: "Class"
-  }
+  },
+  grade: [{
+    type: Schema.Types.ObjectId,
+    ref: "Grade"
+  }]
 });
 
 const Assignment = model('Assignment', assignmentSchema);

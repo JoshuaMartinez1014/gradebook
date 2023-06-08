@@ -8,10 +8,9 @@ function GradesPage() {
   const { currUser } = useUserContext();
   console.log(currUser);
   const [gradeData, setgradeData] = useState();
-  console.log(currUser._id)
   // /user/${currUser._id}
   async function lookupGrade() {
-    const apiPath = `/api/grade/user/${currUser._id}`
+    const apiPath = `/api/class/user/${currUser._id}`
     const searchQuery = await fetch(apiPath)
     const results = await searchQuery.json()
     console.log(results)
@@ -27,9 +26,9 @@ function GradesPage() {
     <div style={{ marginTop: "50px", width: "800px" }}>
       <h1 style={{ marginLeft: "10%" }}>Grades</h1>
       <br />
-      {gradeData && gradeData.map(grade => (
+      {/* {gradeData && gradeData.map(grade => (
         <p key={grade._id}> {grade.assignment.assignment_name} score {grade.grade}</p>
-      ))}
+      ))} */}
 
       <h2>class</h2>
       <h3>Overall Grade $$$$</h3>

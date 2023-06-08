@@ -13,6 +13,10 @@ const classSchema = new Schema({
   students: [{
     type: Schema.Types.ObjectId,
     ref: "User"
+  }],
+  assignment: [{
+    type: Schema.Types.ObjectId,
+    ref: "Assignment"
   }]
 });
 
