@@ -50,7 +50,7 @@ export const UserProvider = ({ children }) => {
 
   const logout = () => {
     Cookies.remove("auth-cookie");
-    window.location.href = "/login";
+    navigate("/login");
     setLogUser("Successfully Logged-Out");
   };
 
