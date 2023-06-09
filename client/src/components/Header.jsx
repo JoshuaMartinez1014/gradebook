@@ -6,7 +6,7 @@ import { useUserContext } from "../ctx/UserContext";
 /* import "../styles/global.css"; */
 
 function Header(props) {
-  const { currUser } = useUserContext();
+  const { currUser, logout } = useUserContext();
   console.log({ currUser });
   return (
     <>
@@ -19,6 +19,7 @@ function Header(props) {
           fontSize: "1.4rem",
           boxShadow: "2px 0px 8px 0px rgba(0, 0, 0, 0.75)",
           paddingTop: "10px",
+          zIndex: "1",
         }}
       >
         <Container fluid>
@@ -48,11 +49,11 @@ function Header(props) {
                 </NavLink>
               ) : (
                 <NavLink
-                  to="/User"
+                  to="/user"
                   className="nav-link"
                   /* activeclassname="active-link" */
                 >
-                  {currUser.fname}
+                  {currUser.fname} {currUser.lname}
                 </NavLink>
               )}
               <NavLink to="/grades" className="nav-link">
@@ -62,6 +63,11 @@ function Header(props) {
               <NavLink to="/classes" className="nav-link">
                 Classes
               </NavLink>
+              {currUser && (
+                <NavLink to="/login" className="nav-link" onClick={logout}>
+                  Logout
+                </NavLink>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
