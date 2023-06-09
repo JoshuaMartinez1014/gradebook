@@ -3,3 +3,6 @@ export { default as LoginPage } from "./LoginPage.jsx";
 export { default as SignupPage } from "./SignupPage.jsx";
 export { default as GradePage } from "./GradePage.jsx";
 export { default as Calendar } from "./Calendar.jsx";
+export { default as SyllabusPage } from "./Syllabus.jsx";
+export { default as TeacherPage } from "./TeacherPage.jsx";
+export { default as AssignmentsPage } from "./Assignments.jsx";

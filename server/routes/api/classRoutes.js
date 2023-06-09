@@ -33,6 +33,19 @@ router.get("/user/:id", async (req, res) => {
     }
 });
 
+router.get("/teacher/:id", async (req, res) => {
+    console.log("test")
+    try {
+        const classData = await Class.find({ students: req.params.id }).
+            populate("teacher").
+            exec();
+        //include: Assignment? Class?
+        res.status(200).json(classData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 // Get a single class
 router.get("/:id", async (req, res) => {
     try {
