@@ -32,7 +32,7 @@ function App() {
               <div id="page-content" style={{}}>
                 <Routes>
                   <Route path="/" exact element={<HomePage />} />
-                  <Route path="/login" exact element={<LoginPage />} />
+                  <Route path="/login" element={<LoginPage />} />
                   <Route path="/signup" element={<SignupPage />} />
                   <Route path="/grades" element={<GradePage />} />
                   <Route path="/syllabus" element={<SyllabusPage />} />

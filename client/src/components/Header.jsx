@@ -2,9 +2,12 @@ import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { NavLink, Link } from "react-router-dom";
 import GradeBookImage from "../img/Gradebook.svg";
+import { useUserContext } from "../ctx/UserContext";
 /* import "../styles/global.css"; */
 
 function Header(props) {
+  const { currUser } = useUserContext();
+  console.log({ currUser });
   return (
     <>
       <Navbar
@@ -35,13 +38,23 @@ function Header(props) {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto d-flex justify-content-end flex-fill">
-              <NavLink
-                to="/login"
-                className="nav-link"
-                /* activeclassname="active-link" */
-              >
-                Login
-              </NavLink>
+              {!currUser ? (
+                <NavLink
+                  to="/login"
+                  className="nav-link"
+                  /* activeclassname="active-link" */
+                >
+                  Login
+                </NavLink>
+              ) : (
+                <NavLink
+                  to="/User"
+                  className="nav-link"
+                  /* activeclassname="active-link" */
+                >
+                  {currUser.fname}
+                </NavLink>
+              )}
               <NavLink to="/grades" className="nav-link">
                 Grades
               </NavLink>
