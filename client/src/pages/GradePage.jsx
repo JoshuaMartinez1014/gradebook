@@ -25,19 +25,21 @@ function GradesPage() {
       <h1 style={{ marginLeft: "10%" }}>Grades</h1>
       <br />
       {gradeData && gradeData.map(grade => (
-        <>
-          <h2 key={grade._id}> {grade.class_name}</h2>
+        <React.Fragment key={grade._id}>
+
+          <h2 > {grade.class_name}</h2>
           {grade.assignment.map(hw => (
-            <>
-              <h3 key={hw._id}>{hw.assignment_name}</h3>
+            <React.Fragment key={hw._id}>
+              <h3 >{hw.assignment_name}</h3>
               {hw.grade.map(score => (
                 <p key={score._id}>Score {score.grade}</p>
               ))}
-            </>
+            </React.Fragment>
           ))}
-        </>
+        </React.Fragment>
+
       ))}
-      
+
       <Container className="d-flex justify-content-center">
         <Table striped bordered className="grades-table">
           <thead>

@@ -6,7 +6,7 @@ import "../styles/global.css";
 function TeacherPage() {
   const { currUser } = useUserContext();
   console.log(currUser);
-  
+
   const [teacherData, setTeacherData] = useState();
   async function lookupTeacher() {
     const apiPath = `/api/class/teacher/${currUser._id}`
@@ -24,11 +24,13 @@ function TeacherPage() {
       <h1 style={{ marginLeft: "10%" }}>Teacher</h1>
       <br />
       {teacherData && teacherData.map(teacher => (
-        <>
-          <h2 key={teacher._id}> {teacher.class_name}</h2>
-          <p key={teacher.teacher._id}>{teacher.teacher.fname} {teacher.teacher.lname}</p>
-          <a href = {teacher.teacher.email}>Send Email</a>
-        </>
+        <React.Fragment key={teacher._id}>
+
+          <h2 > {teacher.class_name}</h2>
+          <p >{teacher.teacher.fname} {teacher.teacher.lname}</p>
+          <a href={teacher.teacher.email}>Send Email</a>
+        </React.Fragment>
+
       ))}
     </div>
   );
