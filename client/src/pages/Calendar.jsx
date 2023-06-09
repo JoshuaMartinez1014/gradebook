@@ -3,17 +3,9 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import "../styles/global.css";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
 
 function Calendar() {
-  const eventContent = ({ event }) => {
-    return (
-      <Link to={`/assignment/${event.id}`}>
-        <span>{event.title}</span>
-      </Link>
-    );
-  };
 
   const [dateData, setDateData] = useState();
   async function lookupDate() {
@@ -21,7 +13,7 @@ function Calendar() {
     const searchQuery = await fetch(apiPath)
     const results = await searchQuery.json()
     console.log(results)
-    const test=results.map(hw => ({ id: hw._id, title: hw.assignment_name, date: hw.due_date }
+    const test=results.map(hw => ({ id: hw._id, title: hw.assignment_name, date: hw.due_date, url: `/assignment/${hw._id}`}
     ))
     console.log(test)
     setDateData(test)
@@ -46,7 +38,7 @@ return (
       initialView="dayGridMonth"
       height="100vh"
       events={dateData}
-      eventContent={eventContent}
+      
 
     />
   </div>
