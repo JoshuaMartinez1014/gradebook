@@ -17,8 +17,10 @@ function TeacherPage() {
   }
   useEffect(() => {
     console.log("context use effect working");
-    lookupTeacher();
-  }, []);
+    if( currUser && currUser._id ){
+      lookupTeacher();
+    }
+  }, [currUser]);
   return (
     <div style={{ marginTop: "50px", width: "800px" }}>
       <h1 style={{ marginLeft: "10%" }}>Teacher</h1>
