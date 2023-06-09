@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, models } = require("mongoose");
 
 const gradeSchema = new Schema({
   grade: {
@@ -8,16 +8,15 @@ const gradeSchema = new Schema({
   student: {
     type: Schema.Types.ObjectId,
     required: true,
-    ref: "User"
+    ref: "User",
   },
   assignment: {
     type: Schema.Types.ObjectId,
     required: true,
-    ref: "Assignment"
-  }
+    ref: "Assignment",
+  },
 });
 
-const Grade = model('Grade', gradeSchema);
+const Grade = model("Grade", gradeSchema);
 
-module.exports = Grade;
-// module.exports = models.Grade ||  model('Grade', gradeSchema);
+module.exports = models.Grade || model("Grade", gradeSchema);
