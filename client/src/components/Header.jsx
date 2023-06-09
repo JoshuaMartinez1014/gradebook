@@ -19,7 +19,7 @@ function Header(props) {
         }}
       >
         <Container fluid>
-          {/* <Link to="/" style={{ textDecoration: "none" }}> */}
+          <Link to="/" style={{ textDecoration: "none" }}>
             <Navbar.Brand
               className="flex-fill header-brand"
               style={{ fontSize: "2rem" }}
@@ -31,14 +31,14 @@ function Header(props) {
               />{" "}
               GradeBook
             </Navbar.Brand>
-          {/* </Link> */}
+          </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto d-flex justify-content-end flex-fill">
               <NavLink
                 to="/login"
                 className="nav-link"
-                /* activeClassName="active-link" */
+                /* activeclassname="active-link" */
               >
                 Login
               </NavLink>
