@@ -17,8 +17,10 @@ function AssignmentsPage() {
   }
   useEffect(() => {
     console.log("context use effect working");
-    lookupAssignments();
-  }, []);
+    if( currUser && currUser._id ){
+      lookupAssignments();
+    }
+  }, [currUser]);
   return (
     <div style={{ marginTop: "50px", width: "800px" }}>
       <h1 style={{ marginLeft: "10%" }}>Assignments</h1>

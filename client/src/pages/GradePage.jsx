@@ -18,8 +18,10 @@ function GradesPage() {
   }
   useEffect(() => {
     console.log("context use effect working");
-    lookupGrade();
-  }, []);
+    if( currUser && currUser._id ){
+      lookupGrade();
+    }
+  }, [currUser]);
   return (
     <div style={{ marginTop: "50px", width: "800px" }}>
       <h1 style={{ marginLeft: "10%" }}>Grades</h1>

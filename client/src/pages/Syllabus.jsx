@@ -18,8 +18,10 @@ function SyllabusPage() {
 
   useEffect(() => {
     console.log("context use effect working");
-    lookupClass();
-  }, []);
+    if( currUser && currUser._id ){
+      lookupClass();
+    }
+  }, [currUser]);
 
   return (
     <div style={{ marginTop: "50px", width: "800px" }}>
