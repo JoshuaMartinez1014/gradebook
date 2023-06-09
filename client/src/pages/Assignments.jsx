@@ -6,7 +6,7 @@ import "../styles/global.css";
 function AssignmentsPage() {
   const { currUser } = useUserContext();
   console.log(currUser);
-  
+
   const [assignmentsData, setAssignmentsData] = useState();
   async function lookupAssignments() {
     const apiPath = `/api/class/user/${currUser._id}`
@@ -24,13 +24,14 @@ function AssignmentsPage() {
       <h1 style={{ marginLeft: "10%" }}>Assignments</h1>
       <br />
       {assignmentsData && assignmentsData.map(assignments => (
-        <>
-          <h2 key={assignments._id}> {assignments.class_name}</h2>
-          {assignments.assignment.map(hw=>(
-            <p key={hw._id}><a href= {`assignment/${hw._id}`}>{hw.assignment_name}</a></p>
+        <React.Fragment key={assignments._id}>
+
+          <h2 > {assignments.class_name}</h2>
+          {assignments.assignment.map(hw => (
+            <p key={hw._id}><a href={`assignment/${hw._id}`}>{hw.assignment_name}</a></p>
           ))}
-          
-        </>
+
+        </React.Fragment>
       ))}
     </div>
   );

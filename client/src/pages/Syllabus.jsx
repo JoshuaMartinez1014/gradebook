@@ -6,7 +6,7 @@ import "../styles/global.css";
 function SyllabusPage() {
   const { currUser } = useUserContext();
   console.log(currUser);
-  
+
   const [classData, setClassData] = useState();
   async function lookupClass() {
     const apiPath = `/api/class/user/${currUser._id}`
@@ -24,10 +24,12 @@ function SyllabusPage() {
       <h1 style={{ marginLeft: "10%" }}>Syllabus</h1>
       <br />
       {classData && classData.map(course => (
-        <>
-          <h2 key={course.class_name}> {course.class_name}</h2>
-          <p key={course._id}>{course.syllabus}</p>
-        </>
+        <React.Fragment key={course._id}>
+
+          <h2> {course.class_name}</h2>
+          <p >{course.syllabus}</p>
+        </React.Fragment>
+
       ))}
     </div>
   );
