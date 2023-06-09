@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import { useLocation } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const UserContext = createContext({});
 export const useUserContext = () => useContext(UserContext);
@@ -10,7 +10,7 @@ export const UserProvider = ({ children }) => {
   //.... define our state variables...
   const [currUser, setCurrUser] = useState(null);
   const location = useLocation();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const verifyUser = async () => {
     if (Cookies.get("auth-cookie")) {
@@ -29,14 +29,14 @@ export const UserProvider = ({ children }) => {
         }
       } catch (err) {
         console.log(err.message);
-        if (!history.location.pathname.includes("/login")) {
-          history.push("/login");
+        if (!window.location.pathname.includes("/login")) {
+          navigate("/login");
         }
       }
     } else {
       console.log("no cookie found");
-      if (!history.location.pathname.includes("/login")) {
-        history.push("/login");
+      if (!window.location.pathname.includes("/login")) {
+        navigate("/login");
       }
     }
   };
