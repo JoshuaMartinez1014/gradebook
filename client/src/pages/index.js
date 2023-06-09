@@ -7,3 +7,4 @@ export { default as SyllabusPage } from "./Syllabus.jsx";
 export { default as TeacherPage } from "./TeacherPage.jsx";
 export { default as AssignmentsPage } from "./Assignments.jsx";
 export { default as AssignmentPage } from "./Assignment.jsx";
+export { default as UserPage } from "./UserPage.jsx";
