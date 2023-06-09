@@ -8,7 +8,7 @@ import {
   Routes,
   BrowserRouter,
 } from "react-router-dom";
-import { HomePage, LoginPage, SignupPage, GradePage, Calendar, SyllabusPage, TeacherPage, AssignmentsPage } from "./pages";
+import { HomePage, LoginPage, SignupPage, GradePage, Calendar, SyllabusPage, TeacherPage, AssignmentsPage, AssignmentPage } from "./pages";
 import { Header, Footer, SideNav } from "./components";
 import "./styles/global.css";
 
@@ -31,6 +31,7 @@ function App() {
                   <Route path="/teacher" element={<TeacherPage />} />
                   <Route path="/calendar" element={<Calendar />} />
                   <Route path="/assignments" element={<AssignmentsPage />} />
+                  <Route path="/assignment/:id" element={<AssignmentPage />} />
                 </Routes>{" "}
               </div>
             </div>

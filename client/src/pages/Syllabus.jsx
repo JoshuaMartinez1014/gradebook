@@ -3,7 +3,7 @@ import { useUserContext } from "../ctx/UserContext";
 import { useState, useEffect } from "react";
 import "../styles/global.css";
 
-function SyllabusPage(props) {
+function SyllabusPage() {
   const { currUser } = useUserContext();
   console.log(currUser);
   
