@@ -5,7 +5,7 @@ import { useUserContext } from "../ctx/UserContext";
 import { useState, useEffect } from "react";
 import "../styles/global.css";
 
-function AssignmentsPage() {
+function AssignmentPage() {
   const { currUser } = useUserContext();
   console.log(currUser);
   const url = window.location.pathname.split("/").pop()
@@ -29,7 +29,7 @@ function AssignmentsPage() {
   }
   useEffect(() => {
     console.log("context use effect working");
-    lookupAssignment();
+    // lookupAssignment();
   }, []);
   return (
     <div style={{ marginTop: "50px", width: "800px" }}>
@@ -40,4 +40,4 @@ function AssignmentsPage() {
   );
 }
 
-export default AssignmentsPage;
+export default AssignmentPage;
