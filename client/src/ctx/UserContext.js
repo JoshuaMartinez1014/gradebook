@@ -9,6 +9,7 @@ export const useUserContext = () => useContext(UserContext);
 export const UserProvider = ({ children }) => {
   //.... define our state variables...
   const [currUser, setCurrUser] = useState(null);
+  const [logUser, setLogUser] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -29,13 +30,19 @@ export const UserProvider = ({ children }) => {
         }
       } catch (err) {
         console.log(err.message);
-        if (!window.location.pathname.includes("/login")) {
+        if (
+          !window.location.pathname.includes("/login") &&
+          !window.location.pathname.includes("/signup")
+        ) {
           navigate("/login");
         }
       }
     } else {
       console.log("no cookie found");
-      if (!window.location.pathname.includes("/login")) {
+      if (
+        !window.location.pathname.includes("/login") &&
+        !window.location.pathname.includes("/signup")
+      ) {
         navigate("/login");
       }
     }
@@ -44,6 +51,7 @@ export const UserProvider = ({ children }) => {
   const logout = () => {
     Cookies.remove("auth-cookie");
     window.location.href = "/login";
+    setLogUser("Successfully Logged-Out");
   };
 
   useEffect(() => {
@@ -52,7 +60,7 @@ export const UserProvider = ({ children }) => {
   }, [location.pathname]);
 
   return (
-    <UserContext.Provider value={{ currUser, logout }}>
+    <UserContext.Provider value={{ currUser, logout, logUser }}>
       {children}
     </UserContext.Provider>
   );
