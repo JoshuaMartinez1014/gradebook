@@ -21,7 +21,6 @@ function Header(props) {
         <Container fluid>
           <Link to="/" style={{ textDecoration: "none" }}>
             <Navbar.Brand
-              href="/"
               className="flex-fill header-brand"
               style={{ fontSize: "2rem" }}
             >
