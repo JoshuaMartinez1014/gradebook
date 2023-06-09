@@ -20,3 +20,4 @@ const gradeSchema = new Schema({
 const Grade = model('Grade', gradeSchema);
 
 module.exports = Grade;
+// module.exports = models.Grade ||  model('Grade', gradeSchema);

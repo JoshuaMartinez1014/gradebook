@@ -17,7 +17,9 @@ router.get("/", async (req, res) => {
 // Get a single assignment
 router.get("/:id", async (req, res) => {
     try {
-        const assignmentData = await Assignment.findById(req.params.id)
+        const assignmentData = await Assignment.findById(req.params.id).
+        populate("grade").
+        exec();
         //include: Grade? Class?
         res.status(200).json(assignmentData);
     } catch (err) {

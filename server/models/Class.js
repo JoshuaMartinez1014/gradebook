@@ -5,6 +5,10 @@ const classSchema = new Schema({
     type: String,
     required: true,
   },
+  syllabus: {
+    type: String,
+    required: true,
+  },
   teacher: {
     type: Schema.Types.ObjectId,
     required: true,
