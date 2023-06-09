@@ -14,6 +14,25 @@ router.get("/", async (req, res) => {
     }
 });
 
+router.get("/user/:id", async (req, res) => {
+    console.log("test")
+    try {
+        const classData = await Class.find({ students: req.params.id }).
+            populate({
+                path: 'assignment',
+                populate: {
+                    path: 'grade',
+                    match: { student: req.params.id }
+                }
+            }).
+            exec();
+        //include: Assignment? Class?
+        res.status(200).json(classData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 // Get a single class
 router.get("/:id", async (req, res) => {
     try {
