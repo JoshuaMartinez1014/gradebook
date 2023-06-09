@@ -13,7 +13,12 @@ html {
 /* All of the html */
 #page-container {
   background: rgb(139, 139, 109);
-  background: linear-gradient(90deg, rgba(139, 139, 109, 1) 0%, rgba(184, 190, 124, 1) 35%, rgba(139, 139, 109, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(139, 139, 109, 1) 0%,
+    rgba(184, 190, 124, 1) 35%,
+    rgba(139, 139, 109, 1) 100%
+  );
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -54,7 +59,7 @@ html {
   box-shadow: 2px 0px 8px 0px rgba(0, 0, 0, 0.75);
 }
 
-.sidenav>.sidenav-link {
+.sidenav > .sidenav-link {
   color: rgb(255, 255, 255);
   border-bottom: 1px solid #fff;
   width: 100%;
@@ -63,19 +68,19 @@ html {
   justify-content: center;
 }
 
-.sidenav>.sidenav-link:hover {
+.sidenav > .sidenav-link:hover {
   color: white;
   background-color: rgb(114, 114, 114);
 }
 
-.sidenav>.sidenav-link.active {
+.sidenav > .sidenav-link.active {
   background-color: var(--page-color);
   color: #030000;
 }
 
 /* middle clicking links retain properties */
-.sidenav>.sidenav-link:focus {
-  color: #000000;
+.sidenav > .sidenav-link:focus {
+  color: #ffffff;
 }
 
 .grades-table th,
@@ -104,7 +109,6 @@ thead {
 }
 
 @media (max-width: 1030px) {
-
   /* sets sidebar to the top of the screen */
   .nav {
     flex-wrap: nowrap !important;
@@ -122,7 +126,7 @@ thead {
     scrollbar-color: #888 #f1f1f1;
   }
 
-  .sidenav>.sidenav-link {
+  .sidenav > .sidenav-link {
     width: auto;
     padding: 10px;
     border-right: solid white 1px;
