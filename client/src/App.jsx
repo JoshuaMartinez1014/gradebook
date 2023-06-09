@@ -8,7 +8,17 @@ import {
   Routes,
   BrowserRouter,
 } from "react-router-dom";
-import { HomePage, LoginPage, SignupPage, GradePage, Calendar, SyllabusPage, TeacherPage, AssignmentsPage, AssignmentPage } from "./pages";
+import {
+  HomePage,
+  LoginPage,
+  SignupPage,
+  GradePage,
+  Calendar,
+  SyllabusPage,
+  TeacherPage,
+  AssignmentsPage,
+  AssignmentPage,
+} from "./pages";
 import { Header, Footer, SideNav } from "./components";
 import "./styles/global.css";
 
@@ -23,8 +33,8 @@ function App() {
               <SideNav />{" "}
               <div id="page-content" style={{}}>
                 <Routes>
-                  <Route path="/" exact element={<HomePage />} />
-                  <Route path="/login" exact element={<LoginPage />} />
+                  <Route path="/login" exact element={<HomePage />} />
+                  <Route path="/" exact element={<LoginPage />} />
                   <Route path="/signup" element={<SignupPage />} />
                   <Route path="/grades" element={<GradePage />} />
                   <Route path="/syllabus" element={<SyllabusPage />} />
