@@ -27,14 +27,14 @@ export const UserProvider = ({ children }) => {
         }
       } catch (err) {
         console.log(err.message);
-        if (!window.location.href.includes("/")) {
-          window.location.href = "/";
+        if (!window.location.href.includes("/login")) {
+          window.location.href = "/login";
         }
       }
     } else {
       console.log("no cookie found");
-      if (!window.location.href.includes("/")) {
-        window.location.href = "/";
+      if (!window.location.href.includes("/login")) {
+        window.location.href = "/login";
       }
     }
   };
