@@ -8,7 +8,7 @@ import {
   Routes,
   BrowserRouter,
 } from "react-router-dom";
-import { HomePage, LoginPage, SignupPage, GradePage, Calendar } from "./pages";
+import { HomePage, LoginPage, SignupPage, GradePage, Calendar, SyllabusPage, TeacherPage, AssignmentsPage, AssignmentPage } from "./pages";
 import { Header, Footer, SideNav } from "./components";
 import "./styles/global.css";
 
@@ -27,8 +27,11 @@ function App() {
                   <Route path="/login" exact element={<LoginPage />} />
                   <Route path="/signup" element={<SignupPage />} />
                   <Route path="/grades" element={<GradePage />} />
-                  <Route path="/link1" element={<GradePage />} />
+                  <Route path="/syllabus" element={<SyllabusPage />} />
+                  <Route path="/teacher" element={<TeacherPage />} />
                   <Route path="/calendar" element={<Calendar />} />
+                  <Route path="/assignments" element={<AssignmentsPage />} />
+                  <Route path="/assignment/:id" element={<AssignmentPage />} />
                 </Routes>{" "}
               </div>
             </div>
