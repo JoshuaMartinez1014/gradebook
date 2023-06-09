@@ -1,6 +1,6 @@
 import React from "react";
-import SubmitedAssignment from "../components/NotSubmitedAssignment";
-import NotSubmitedAssignment from "../components/SubmitedAssignment";
+import SubmitedAssignment from "../components/SubmitedAssignment";
+import NotSubmitedAssignment from "../components/NotSubmitedAssignment";
 import { useUserContext } from "../ctx/UserContext";
 import { useState, useEffect } from "react";
 import "../styles/global.css";
@@ -11,6 +11,7 @@ function AssignmentPage() {
   const url = window.location.pathname.split("/").pop()
   console.log(url)
   const [submitedData, setSubmitedData] = useState(false);
+  const [assignmentData, setAssignmentData] = useState("");
 
   async function lookupAssignment() {
     const apiPath = `/api/assignment/${url}`
@@ -18,7 +19,7 @@ function AssignmentPage() {
     const results = await searchQuery.json()
     console.log(results)
     for(let i =0; i <results.grade.length; i++){
-        if(results.grade[i]._id===currUser._id){
+        if(results.grade[i].student===currUser._id){
             setSubmitedData(true)
             console.log("is true")
         }else {
@@ -26,6 +27,7 @@ function AssignmentPage() {
             console.log("is false")
         }
     }
+    setAssignmentData(results.assignment_name)
   }
   useEffect(() => {
     console.log("context use effect working");
@@ -37,7 +39,7 @@ function AssignmentPage() {
     <div style={{ marginTop: "50px", width: "800px" }}>
       <h1 style={{ marginLeft: "10%" }}>Assignment</h1>
       <br />
-      {submitedData ?(<SubmitedAssignment />):(<NotSubmitedAssignment />)}
+      {submitedData ?(<SubmitedAssignment data={assignmentData}/>):(<NotSubmitedAssignment data={assignmentData}/>)}
     </div>
   );
 }
