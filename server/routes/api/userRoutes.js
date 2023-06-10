@@ -57,7 +57,8 @@ router.put("/:id", async (req, res) => {
     const userData = await User.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
     });
-    res.status(200).json(userData);
+    const { password, ...modifiedUser } = userData;
+    res.status(200).json({status: "success" , payload: modifiedUser});
   } catch (err) {
     res.status(400).json(err);
   }
