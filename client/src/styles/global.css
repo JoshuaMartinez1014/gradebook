@@ -15,9 +15,9 @@ html {
   background: rgb(139, 139, 109);
   background: linear-gradient(
     90deg,
-    rgba(139, 139, 109, 1) 0%,
-    rgba(184, 190, 124, 1) 35%,
-    rgba(139, 139, 109, 1) 100%
+    rgb(179, 155, 111) 0%,
+    rgb(223, 157, 37) 35%,
+    rgb(170, 144, 97) 100%
   );
   display: flex;
   flex-direction: column;
