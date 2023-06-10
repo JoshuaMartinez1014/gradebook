@@ -9,7 +9,7 @@ export const useUserContext = () => useContext(UserContext);
 export const UserProvider = ({ children }) => {
   //.... define our state variables...
   const [currUser, setCurrUser] = useState(null);
-  const [logUser, setLogUser] = useState(null);
+  const [logoutAlert, setLogoutAlert] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -51,7 +51,7 @@ export const UserProvider = ({ children }) => {
   const logout = () => {
     Cookies.remove("auth-cookie");
     navigate("/login");
-    setLogUser("Successfully Logged-Out");
+    setLogoutAlert("Successfully Logged-Out");
   };
 
   useEffect(() => {
@@ -60,7 +60,7 @@ export const UserProvider = ({ children }) => {
   }, [location.pathname]);
 
   return (
-    <UserContext.Provider value={{ currUser, logout, logUser }}>
+    <UserContext.Provider value={{ currUser, logout, logoutAlert }}>
       {children}
     </UserContext.Provider>
   );
