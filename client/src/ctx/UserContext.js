@@ -57,7 +57,7 @@ export const UserProvider = ({ children }) => {
   useEffect(() => {
     console.log("context use effect working");
     verifyUser();
-  }, [location.pathname]);
+  }, [location.pathname, location.reload]);
 
   return (
     <UserContext.Provider value={{ currUser, logout, logUser }}>
