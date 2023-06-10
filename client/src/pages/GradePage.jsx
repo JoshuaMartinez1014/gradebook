@@ -23,10 +23,6 @@ function GradesPage() {
     }
   }, [currUser]);
 
-  useEffect(() => {
-    console.log("context use effect working");
-    verifyUser();
-  }, [location.pathname, location.reload()]);
   return (
     <div style={{ marginTop: "50px", width: "800px" }}>
       <h1 style={{ marginLeft: "10%" }}>Grades</h1>
