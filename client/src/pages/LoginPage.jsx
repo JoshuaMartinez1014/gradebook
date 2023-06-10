@@ -1,12 +1,13 @@
 import { useState } from "react";
-import { Container, Form, Button } from "react-bootstrap";
+import { Container, Form, Button, Alert } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useUserContext } from "../ctx/UserContext";
-import Alert from "@mui/material/Alert";
 
 function Login() {
   const [formData, setFormData] = useState({});
-  const { logUser } = useUserContext();
+  const [showAlert, setShowAlert] = useState(true);
+  const { logoutAlert } = useUserContext();
+
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
@@ -27,20 +28,20 @@ function Login() {
         window.location.href = "/";
       });
   }
-  <Alert onClose={() => {}}>This is a success alert — check it out!</Alert>;
 
   return (
     <>
+      {" "}
       <div style={{ marginTop: "50px", flexGrow: 0.5, flexBasis: "20%" }}>
-        {logUser && (
+        {logoutAlert && (
           <Alert
-            action={
-              <Button color="inherit" size="small">
-                UNDO
-              </Button>
-            }
+            variant="success"
+            onClose={() => setShowAlert(false)}
+            dismissible
           >
-            This is a success alert — check it out!
+            {" "}
+            {/* Bootstrap Alert */}
+            Successfully Logged out!
           </Alert>
         )}
         <h1 style={{ marginLeft: "1%" }}>Login</h1>
