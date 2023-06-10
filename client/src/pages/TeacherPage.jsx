@@ -1,26 +1,26 @@
 import React from "react";
-import { useUserContext } from "../ctx/UserContext";
+// import { useUserContext } from "../ctx/UserContext";
 import { useState, useEffect } from "react";
 import "../styles/global.css";
 
 function TeacherPage() {
-  const { currUser } = useUserContext();
-  console.log(currUser);
+  // const { currUser } = useUserContext();
+  // console.log(currUser);
 
   const [teacherData, setTeacherData] = useState();
-  async function lookupTeacher() {
-    const apiPath = `/api/class/teacher/${currUser._id}`
-    const searchQuery = await fetch(apiPath)
-    const results = await searchQuery.json()
-    console.log(results)
-    setTeacherData(results)
-  }
-  useEffect(() => {
-    console.log("context use effect working");
-    if( currUser && currUser._id ){
-      lookupTeacher();
-    }
-  }, [currUser]);
+  // async function lookupTeacher() {
+  //   const apiPath = `/api/class/teacher/${currUser._id}`
+  //   const searchQuery = await fetch(apiPath)
+  //   const results = await searchQuery.json()
+  //   console.log(results)
+  //   setTeacherData(results)
+  // }
+  // useEffect(() => {
+  //   console.log("context use effect working");
+  //   if( currUser && currUser._id ){
+  //     lookupTeacher();
+  //   }
+  // }, [currUser]);
   return (
     <div style={{ marginTop: "50px", width: "800px" }}>
       <h1 style={{ marginLeft: "10%" }}>Teacher</h1>

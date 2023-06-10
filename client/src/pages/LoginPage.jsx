@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useUserContext } from "../ctx/UserContext";
-import Alert from "@mui/material/Alert";
+// import { useUserContext } from "../ctx/UserContext";
+import { loginUser } from '../utils/API';
+import Auth from '../utils/auth';
+//import Alert from "@mui/material/Alert";
 
 function Login() {
-  const [formData, setFormData] = useState({});
-  const { logUser } = useUserContext();
+  const [formData, setFormData] = useState({ email: '', password: '' });
+
+
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
@@ -31,7 +34,7 @@ function Login() {
   return (
     <>
       <div style={{ marginTop: "50px", flexGrow: 0.5, flexBasis: "20%" }}>
-        {logUser && <Alert severity="success">{logUser}</Alert>}
+        {/* {logUser && <Alert severity="success">{logUser}</Alert>} */}
         <h1 style={{ marginLeft: "1%" }}>Login</h1>
         <Container className=" mt-3">
           <Form className="mt-3" style={{}} onSubmit={handleSubmit}>

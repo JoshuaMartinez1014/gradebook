@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <UserProvider>
+        {/* <UserProvider> */}
           <div id="page-container">
             <Header />
             <div id="page-main">
@@ -46,7 +46,7 @@ function App() {
               </div>
             </div>
           </div>
-        </UserProvider>
+        {/* </UserProvider> */}
       </BrowserRouter>
     </>
   );
