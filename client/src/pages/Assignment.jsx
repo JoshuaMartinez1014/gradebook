@@ -27,7 +27,7 @@ function AssignmentPage() {
             console.log("is false")
         }
     }
-    setAssignmentData(results.assignment_name)
+    setAssignmentData([results.assignment_name, results._id])
   }
   useEffect(() => {
     console.log("context use effect working");
@@ -39,7 +39,7 @@ function AssignmentPage() {
     <div style={{ marginTop: "50px", width: "800px" }}>
       <h1 style={{ marginLeft: "10%" }}>Assignment</h1>
       <br />
-      {submitedData ?(<SubmitedAssignment data={assignmentData}/>):(<NotSubmitedAssignment data={assignmentData}/>)}
+      {submitedData ?(<SubmitedAssignment setPosted={setSubmitedData} data={assignmentData}/>):(<NotSubmitedAssignment setPosted={setSubmitedData} data={assignmentData}/>)}
     </div>
   );
 }
