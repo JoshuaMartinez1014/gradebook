@@ -37,6 +37,16 @@ router.post('/', async (req, res) => {
     }
 });
 
+// router.post('/:id', async (req, res) => {
+//     try {
+//         const newGrade = await Grade.create({ ...req.body });
+//         Assignment.updateOne(req.param.id)
+//         res.status(200).json(newGrade);
+//     } catch (err) {
+//         res.status(400).json(err);
+//     }
+// });
+
 // Update an assignment
 router.put('/:id', async (req, res) => {
     try {

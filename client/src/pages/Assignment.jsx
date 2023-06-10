@@ -18,20 +18,26 @@ function AssignmentPage() {
     const searchQuery = await fetch(apiPath)
     const results = await searchQuery.json()
     console.log(results)
-    for(let i =0; i <results.grade.length; i++){
-        if(results.grade[i].student===currUser._id){
-            setSubmitedData(true)
-            console.log("is true")
-        }else {
-            setSubmitedData(false)
-            console.log("is false")
-        }
+
+    setAssignmentData([results.assignment_name, results._id])
+  }
+  
+  async function lookupSubmited() {
+    const apiPath = `/api/submited`
+    const searchQuery = await fetch(apiPath)
+    const results = await searchQuery.json()
+    console.log(results)
+    for (let i = 0; i < results.length; i++) {
+      if (results[i].student === currUser._id && results[i].assignment === url) {
+        setSubmitedData(true)
+      }
     }
-    setAssignmentData(results.assignment_name)
+    setAssignmentData([results.assignment_name, results._id])
   }
   useEffect(() => {
     console.log("context use effect working");
-    if( currUser && currUser._id ){
+    if (currUser && currUser._id) {
+      lookupSubmited();
       lookupAssignment();
     }
   }, [currUser]);
@@ -39,7 +45,7 @@ function AssignmentPage() {
     <div style={{ marginTop: "50px", width: "800px" }}>
       <h1 style={{ marginLeft: "10%" }}>Assignment</h1>
       <br />
-      {submitedData ?(<SubmitedAssignment data={assignmentData}/>):(<NotSubmitedAssignment data={assignmentData}/>)}
+      {submitedData ? (<SubmitedAssignment setPosted={setSubmitedData} data={assignmentData} />) : (<NotSubmitedAssignment setPosted={setSubmitedData} data={assignmentData} />)}
     </div>
   );
 }
