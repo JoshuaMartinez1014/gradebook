@@ -27,44 +27,58 @@ function SideNav(props) {
   }, []);
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return (
+      <>
+        {" "}
+        <Nav className="sidenav"></Nav>
+      </>
+    );
   }
 
   return (
     <Nav className="sidenav">
-      {currUser.isTeacher === false ? (
-        <>
+      {currUser ? (
+        currUser.isTeacher === false ? (
+          <>
+            <NavLink
+              className="sidenav-link nav-link"
+              activeclassname="active"
+              to="/syllabus"
+            >
+              Syllabus &nbsp;&nbsp;&nbsp;&nbsp;&gt;
+            </NavLink>
+            <NavLink
+              className="sidenav-link nav-link"
+              activeclassname="active"
+              to="/teacher"
+            >
+              Teachers &nbsp;&nbsp;&nbsp;&nbsp;&gt;
+            </NavLink>
+            <NavLink
+              className="sidenav-link nav-link"
+              activeclassname="active"
+              to="/calendar"
+            >
+              Calendar &nbsp;&nbsp;&nbsp;&nbsp;&gt;
+            </NavLink>
+            <NavLink
+              className="sidenav-link nav-link"
+              activeclassname="active"
+              to="/assignments"
+            >
+              Assignments &gt;
+            </NavLink>
+          </>
+        ) : (
           <NavLink
             className="sidenav-link nav-link"
             activeclassname="active"
-            to="/syllabus"
+            to="/submitted"
           >
-            Syllabus &nbsp;&nbsp;&nbsp;&nbsp;&gt;
+            Submitted Work &gt;
           </NavLink>
-          <NavLink
-            className="sidenav-link nav-link"
-            activeclassname="active"
-            to="/teacher"
-          >
-            Teachers &nbsp;&nbsp;&nbsp;&nbsp;&gt;
-          </NavLink>
-          <NavLink
-            className="sidenav-link nav-link"
-            activeclassname="active"
-            to="/calendar"
-          >
-            Calendar &nbsp;&nbsp;&nbsp;&nbsp;&gt;
-          </NavLink>
-        </>
-      ) : (
-        <NavLink
-          className="sidenav-link nav-link"
-          activeclassname="active"
-          to="/assignments"
-        >
-          Submitted Work &gt;
-        </NavLink>
-      )}
+        )
+      ) : null}
     </Nav>
   );
 }

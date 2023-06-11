@@ -10,6 +10,10 @@ The calendar feature shows assignments on a monthly basis. The calendar utilizes
 ## Tests
 Testing this program can be done in a local environment by entering the `npm run develop` command in a terminal. Make sure the terminal is open at the root level.
 
+## Tech Stack
+
+JavaScript, CSS, HTML, Node.js, Express, React, React-Bootstrap, MongoDB, Mongoose, jsonwebtoken, cookie-parser, concurrently, Bcrypt, dotenv, FullCalendar, Material UI
+
 ## Screenshots
 
 ![Screenshot of the homepage](./images/gradebook-homepage-screenshot2023-06-10.png)
@@ -19,3 +23,17 @@ Testing this program can be done in a local environment by entering the `npm run
 ## Link to the Deployed Application
 
 https://umb-gradebook.herokuapp.com/
+
+## Creators
+
+Sean Hayes, Joshua Martinez, Belane Belayhun, and Noah Dockman
+
+## GitHub Profiles
+
+[hayessea000](https://github.com/hayessea000)
+
+[JoshuaMartinez1014](https://github.com/JoshuaMartinez1014)
+
+[belaneb](https://github.com/belaneb)
+
+[NDockman](https://github.com/NDockman)

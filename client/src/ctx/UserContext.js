@@ -40,6 +40,7 @@ export const UserProvider = ({ children }) => {
         ) {
           navigate("/login");
           setLoginAlert(true);
+          setCurrUser(null);
         }
       }
     } else {
@@ -50,6 +51,7 @@ export const UserProvider = ({ children }) => {
       ) {
         navigate("/login");
         setLoginAlert(true);
+        setCurrUser(null);
       }
     }
     setloading(false);
@@ -58,6 +60,7 @@ export const UserProvider = ({ children }) => {
   const logout = () => {
     Cookies.remove("auth-cookie");
     Cookies.remove("user-data");
+    setCurrUser(null);
     navigate("/login");
     setLogoutAlert("Successfully Logged-Out");
     setLoginAlert(null);
