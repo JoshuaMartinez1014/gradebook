@@ -33,9 +33,9 @@ function GradesPage() {
             <h2> {grade.class_name}</h2>
             {grade.assignment.map((hw) => (
               <React.Fragment key={hw._id}>
-                <h3>{hw.assignment_name}</h3>
+                <h3 class="assignment-name">{hw.assignment_name}</h3>
                 {hw.grade.map((score) => (
-                  <p key={score._id}>Score {score.grade}</p>
+                  <p class="grade-score" key={score._id}>Score {score.grade}</p>
                 ))}
               </React.Fragment>
             ))}
