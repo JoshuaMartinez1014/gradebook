@@ -38,6 +38,7 @@ function SyllabusPage() {
           borderRadius: "10px",
           textAlign: "center",
           color: "white",
+          boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.6)",
         }}
       >
         Syllabus
@@ -48,6 +49,7 @@ function SyllabusPage() {
           backgroundColor: "white",
           padding: "20px",
           borderRadius: "10px",
+          boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.6)",
         }}
       >
         {classData &&
