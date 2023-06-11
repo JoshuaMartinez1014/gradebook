@@ -34,7 +34,7 @@ function AssignmentsPage() {
           boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.6)",
         }}
       >
-        Assignments
+        Assignment List
       </h1>
       <br />
       <div

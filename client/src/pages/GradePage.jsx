@@ -55,35 +55,40 @@ function GradesPage() {
       >
         {gradeData &&
           gradeData.map((grade) => (
-            <div key={grade._id}>
-              <h2 style={{}}> {grade.class_name}</h2>
-              <div style={{}}>
-                {grade.assignment.map((hw) => (
-                  <div
-                    style={{
-                      backgroundColor: "lightGrey",
-                      padding: "10px",
-                      borderRadius: "15px",
-                    }}
-                    key={hw._id}
-                  >
-                    <h3 style={{}}>{hw.assignment_name}</h3>
-                    {hw.grade.map((score) => (
-                      <p
-                        key={score._id}
-                        style={{
-                          backgroundColor: getGradeColor(score.grade),
-                          padding: "10px",
-                          borderRadius: "15px",
-                        }}
-                      >
-                        Score {score.grade}
-                      </p>
-                    ))}{" "}
-                  </div>
-                ))}
+            <>
+              <div key={grade._id}>
+                <h2 style={{}}> {grade.class_name}</h2>
+                <div style={{}}>
+                  {grade.assignment.map((hw) => (
+                    <div
+                      style={{
+                        backgroundColor: "lightGrey",
+                        padding: "10px",
+                        borderRadius: "15px",
+                      }}
+                      key={hw._id}
+                    >
+                      <h3 style={{}}>{hw.assignment_name}</h3>
+                      {hw.grade.map((score) => (
+                        <>
+                          <p
+                            key={score._id}
+                            style={{
+                              backgroundColor: getGradeColor(score.grade),
+                              padding: "10px",
+                              borderRadius: "15px",
+                            }}
+                          >
+                            Score {score.grade}
+                          </p>
+                        </>
+                      ))}{" "}
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+              <br />
+            </>
           ))}
       </div>
     </div>
