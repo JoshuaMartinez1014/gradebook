@@ -6,8 +6,45 @@ import { useUserContext } from "../ctx/UserContext";
 /* import "../styles/global.css"; */
 
 function Header(props) {
-  const { currUser, logout } = useUserContext();
+  const { currUser, logout, loading } = useUserContext();
   console.log({ currUser });
+
+  if (loading) {
+    return (
+      <>
+        {" "}
+        <Navbar
+          bg="dark"
+          expand="lg"
+          variant="dark"
+          style={{
+            borderBottom: "solid white 6px",
+            fontSize: "1.4rem",
+            boxShadow: "2px 0px 8px 0px rgba(0, 0, 0, 0.75)",
+            paddingTop: "10px",
+            zIndex: "1",
+          }}
+        >
+          {" "}
+          <Container fluid>
+            {" "}
+            <Navbar.Brand
+              className="flex-fill header-brand"
+              style={{ fontSize: "2rem" }}
+            >
+              <img
+                src={GradeBookImage}
+                alt="apple with a letter G inside"
+                style={{ height: "40px", marginRight: "10px" }}
+              />{" "}
+              GradeBook
+            </Navbar.Brand>
+          </Container>
+        </Navbar>
+      </>
+    );
+  }
+
   return (
     <>
       <Navbar

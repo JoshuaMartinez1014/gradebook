@@ -6,7 +6,8 @@ import { useUserContext } from "../ctx/UserContext";
 function Login() {
   const [formData, setFormData] = useState({});
   const [showAlert, setShowAlert] = useState(true);
-  const { logoutAlert } = useUserContext();
+  const { logoutAlert, loginAlert, setLoginAlert, setLogoutAlert } =
+    useUserContext();
 
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -36,12 +37,23 @@ function Login() {
         {logoutAlert && (
           <Alert
             variant="success"
-            onClose={() => setShowAlert(false)}
+            onClose={() => setLogoutAlert(false)}
             dismissible
           >
             {" "}
             {/* Bootstrap Alert */}
             Successfully Logged out!
+          </Alert>
+        )}
+        {loginAlert && (
+          <Alert
+            variant="success"
+            onClose={() => setLoginAlert(false)}
+            dismissible
+          >
+            {" "}
+            {/* Bootstrap Alert */}
+            Please Login Before Accessing the Site!
           </Alert>
         )}
         <h1 style={{ marginLeft: "1%" }}>Login</h1>
