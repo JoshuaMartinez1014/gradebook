@@ -1,11 +1,7 @@
 /* import { UserContext } from "./ctx/UserContext"; */
 import { UserProvider } from "./ctx/UserContext";
 
-import {
-  Route,
-  Routes,
-  BrowserRouter,
-} from "react-router-dom";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import {
   HomePage,
   LoginPage,
@@ -17,6 +13,7 @@ import {
   AssignmentsPage,
   AssignmentPage,
   UserPage,
+  UpdateUserPage,
 } from "./pages";
 import { Header, Footer, SideNav } from "./components";
 import "./styles/global.css";
@@ -41,7 +38,8 @@ function App() {
                   <Route path="/calendar" element={<Calendar />} />
                   <Route path="/assignments" element={<AssignmentsPage />} />
                   <Route path="/assignment/:id" element={<AssignmentPage />} />
-                  <Route path="/user" element={<UserPage />} />
+                  <Route path="/updateuser" element={<UpdateUserPage />} />
+                  <Route path="user" element={<UserPage />} />
                 </Routes>{" "}
               </div>
             </div>

@@ -17,7 +17,7 @@ const HomePage = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          opacity: ".95",
+          opacity: ".93",
           width: "100%",
           height: "100vh",
           zIndex: "0",
@@ -31,15 +31,14 @@ const HomePage = () => {
               fontSize: "4rem",
               marginTop: "20px",
               color: "white",
-              border: "16px solid white",
+              border: "12px solid white",
               padding: "20px",
-              backgroundColor: "rgba(128, 128, 128, 0.2)",
+              backgroundColor: "#212529",
               borderRadius: "20px",
-              opacity: ".95",
+              boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.6)",
             }}
           >
-            Welcome <br />
-            to <br />
+            Welcome to <br />
             GradeBook
           </div>
         </div>

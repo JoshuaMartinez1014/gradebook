@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, Class } = require("../../models");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
@@ -28,7 +28,15 @@ router.get("/:id", async (req, res) => {
 // Create a new user
 router.post("/signup", async (req, res) => {
   try {
-    const userData = await User.create(req.body);
+    console.log(req.body.role);
+    console.log("===========");
+    const userData = await User.create({
+      fname: req.body.fname,
+      lname: req.body.lname,
+      email: req.body.email,
+      password: req.body.password,
+      isTeacher: req.body.isTeacher,
+    });
     const { password, ...modifiedUser } = userData;
 
     const token = jwt.sign(
@@ -58,7 +66,7 @@ router.put("/:id", async (req, res) => {
       new: true,
     });
     const { password, ...modifiedUser } = userData;
-    res.status(200).json({status: "success" , payload: modifiedUser});
+    res.status(200).json({ status: "success", payload: modifiedUser });
   } catch (err) {
     res.status(400).json(err);
   }

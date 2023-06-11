@@ -81,7 +81,7 @@ html {
 
 /* middle clicking links retain properties */
 .sidenav > .sidenav-link:focus {
-  color: #ffffff;
+  color: #000000;
 }
 
 .grades-table th,

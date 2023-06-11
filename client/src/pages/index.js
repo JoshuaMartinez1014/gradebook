@@ -8,3 +8,4 @@ export { default as TeacherPage } from "./TeacherPage.jsx";
 export { default as AssignmentsPage } from "./Assignments.jsx";
 export { default as AssignmentPage } from "./Assignment.jsx";
 export { default as UserPage } from "./UserPage.jsx";
+export { default as UpdateUserPage } from "./UpdateUserPage.jsx";

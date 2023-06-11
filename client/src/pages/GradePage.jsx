@@ -13,9 +13,15 @@ function GradesPage() {
     const searchQuery = await fetch(apiPath);
     const results = await searchQuery.json();
     console.log(results);
-
     setgradeData(results);
   }
+
+  function getGradeColor(grade) {
+    const red = Math.round((255 * (100 - grade)) / 100);
+    const green = Math.round((255 * grade) / 100);
+    return `rgb(${red}, ${green}, 0)`;
+  }
+
   useEffect(() => {
     console.log("context use effect working");
     if (currUser && currUser._id) {
@@ -25,73 +31,61 @@ function GradesPage() {
 
   return (
     <div style={{ marginTop: "50px", width: "800px" }}>
-      <h1 style={{ marginLeft: "10%" }}>Grades</h1>
+      <h1
+        style={{
+          backgroundColor: "#212529",
+          border: "solid black 4px",
+          padding: "20px",
+          borderRadius: "10px",
+          textAlign: "center",
+          color: "white",
+          boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.6)",
+        }}
+      >
+        Grades
+      </h1>
       <br />
-      {gradeData &&
-        gradeData.map((grade) => (
-          <React.Fragment key={grade._id}>
-            <h2> {grade.class_name}</h2>
-            {grade.assignment.map((hw) => (
-              <React.Fragment key={hw._id}>
-                <h3 class="assignment-name">{hw.assignment_name}</h3>
-                {hw.grade.map((score) => (
-                  <p class="grade-score" key={score._id}>Score {score.grade}</p>
+      <div
+        style={{
+          backgroundColor: "white",
+          padding: "20px",
+          borderRadius: "10px",
+          boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.6)",
+        }}
+      >
+        {gradeData &&
+          gradeData.map((grade) => (
+            <div key={grade._id}>
+              <h2 style={{}}> {grade.class_name}</h2>
+              <div style={{}}>
+                {grade.assignment.map((hw) => (
+                  <div
+                    style={{
+                      backgroundColor: "lightGrey",
+                      padding: "10px",
+                      borderRadius: "15px",
+                    }}
+                    key={hw._id}
+                  >
+                    <h3 style={{}}>{hw.assignment_name}</h3>
+                    {hw.grade.map((score) => (
+                      <p
+                        key={score._id}
+                        style={{
+                          backgroundColor: getGradeColor(score.grade),
+                          padding: "10px",
+                          borderRadius: "15px",
+                        }}
+                      >
+                        Score {score.grade}
+                      </p>
+                    ))}{" "}
+                  </div>
                 ))}
-              </React.Fragment>
-            ))}
-          </React.Fragment>
-        ))}
-
-      <Container className="d-flex justify-content-center">
-        <Table striped bordered className="grades-table">
-          <thead>
-            <tr>
-              <th>Math</th>
-              <th>English</th>
-              <th>Science</th>
-              <th>History</th>
-              <th>Computer Science</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Row 1</td>
-              <td>Row 1</td>
-              <td>Row 1</td>
-              <td>Row 1</td>
-              <td>Row 1</td>
-            </tr>
-            <tr>
-              <td>Row 2</td>
-              <td>Row 2</td>
-              <td>Row 2</td>
-              <td>Row 2</td>
-              <td>Row 2</td>
-            </tr>
-            <tr>
-              <td>Row 3</td>
-              <td>Row 3</td>
-              <td>Row 3</td>
-              <td>Row 3</td>
-              <td>Row 3</td>
-            </tr>
-            <tr>
-              <td>Row 4</td>
-              <td>Row 4</td>
-              <td>Row 4</td>
-              <td>Row 4</td>
-              <td>Row 4</td>
-            </tr>
-            <tr>
-              <td>Row 5</td>
-              <td>Row 5</td>
-              <td>Row 5</td>
-              <td>Row 5</td>
-              <td>Row 5</td>
-            </tr>
-          </tbody>
-        </Table>
-      </Container>
+              </div>
+            </div>
+          ))}
+      </div>
     </div>
   );
 }
