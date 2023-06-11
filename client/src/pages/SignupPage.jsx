@@ -1,21 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 /* import { SignupPage } from "."; */
 
 function Signup() {
-  const [formData, setFormData] = useState();
+  const [formData, setFormData] = useState({ isTeacher: false });
 
   function handleChange(e) {
     if (e.target.name === "role") {
       setFormData({
         ...formData,
-        isTeacher: e.target.value === "teacher",
+        isTeacher: e.target.checked,
       });
     } else {
       setFormData({ ...formData, [e.target.name]: e.target.value });
     }
   }
+
+  useEffect(() => {
+    console.log(formData);
+  }, [formData]);
+
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -32,6 +37,7 @@ function Signup() {
         window.location.href = "/";
       });
   }
+
   return (
     <>
       <div style={{ marginTop: "50px", flexGrow: 0.5, flexBasis: "20%" }}>
@@ -94,20 +100,16 @@ function Signup() {
 
             <Form.Group className="mb-3">
               <Form.Check
-                type="radio"
-                id="student-radio"
+                type="checkbox"
+                id="teacher"
                 name="role"
-                onChange={handleChange}
-                value="student"
-                required
-                label="Select if Student"
-              />
-              <Form.Check
-                type="radio"
-                id="teacher-radio"
-                name="role"
-                onChange={handleChange}
-                value="teacher"
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    isTeacher: e.target.checked,
+                  })
+                }
+                value="true"
                 required
                 label="Select if Teacher"
               />
