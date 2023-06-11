@@ -3,54 +3,63 @@
       "_id": "6484ebcac75be5a1d83eecf0",
       "submited": "test",
       "student": "6480ace22c3f10a1b7355ae0",
-      "assignment": "6480aeabce912674ff0c0123"
+      "assignment": "6480aeabce912674ff0c0123",
+      "isGraded": "true"
     },
     {
       "_id": "6484ebd40bb8b41f4b13d1e9",
       "submited": "test",
       "student": "6480acff317e874d41a767cb",
-      "assignment": "6480aeabce912674ff0c0123"
+      "assignment": "6480aeabce912674ff0c0123",
+      "isGraded": "true"
     },
     {
       "_id": "6484ebde24cb52183c0230eb",
       "submited": "test",
       "student": "6480ad1958fcb8a932217b9f",
-      "assignment": "6480aeabce912674ff0c0123"
+      "assignment": "6480aeabce912674ff0c0123",
+      "isGraded": "true"
     },
     {
       "_id": "6484ebf0e2e022f02963d066",
       "submited": "test",
       "student": "6480ace22c3f10a1b7355ae0",
-      "assignment": "6480aebd9176cda0c1818877"
+      "assignment": "6480aebd9176cda0c1818877",
+      "isGraded": "true"
     },
     {
       "_id": "6484ec1ce11bc5c5d8b148bb",
       "submited": "test",
       "student": "6480acff317e874d41a767cb",
-      "assignment": "6480aebd9176cda0c1818877"
+      "assignment": "6480aebd9176cda0c1818877",
+      "isGraded": "true"
     },
     {
       "_id": "6484ec2ddc65c26b388c6e20",
       "submited": "test",
       "student": "6480ad1958fcb8a932217b9f",
-      "assignment": "6480aebd9176cda0c1818877"
+      "assignment": "6480aebd9176cda0c1818877",
+      "isGraded": "true"
     },
     {
       "_id": "6484ec3738d99761c02fadb9",
       "submited": "test",
       "student": "6480ace22c3f10a1b7355ae0",
-      "assignment": "6480aeccf52dfdd1ad854c7a"
+      "assignment": "6480aeccf52dfdd1ad854c7a",
+      "isGraded": "true"
     },
     {
       "_id": "6484ec4b8c4a9d3d7979cd65",
       "submited": "test",
       "student": "6480acff317e874d41a767cb",
-      "assignment": "6480aeccf52dfdd1ad854c7a"
+      "assignment": "6480aeccf52dfdd1ad854c7a",
+      "isGraded": "true"
     },
     {
       "_id": "6484ec56b98d42b33234f2b5",
       "submited": "test",
       "student": "6480ad1958fcb8a932217b9f",
-      "assignment": "6480aeccf52dfdd1ad854c7a"
+      "assignment": "6480aeccf52dfdd1ad854c7a",
+      "isGraded": "true"
     }
 ]
