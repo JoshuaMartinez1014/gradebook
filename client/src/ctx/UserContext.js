@@ -10,10 +10,13 @@ export const UserProvider = ({ children }) => {
   //.... define our state variables...
   const [currUser, setCurrUser] = useState(null);
   const [logoutAlert, setLogoutAlert] = useState(null);
+  const [loginAlert, setLoginAlert] = useState("working");
+  const [loading, setloading] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
 
   const verifyUser = async () => {
+    setloading(true);
     if (Cookies.get("auth-cookie")) {
       try {
         const query = await fetch("/api/user/verify", {
@@ -27,6 +30,7 @@ export const UserProvider = ({ children }) => {
         console.log(result);
         if (result && result.status === "success") {
           setCurrUser(result.payload);
+          Cookies.set("user-data", JSON.stringify(result.payload));
         }
       } catch (err) {
         console.log(err.message);
@@ -35,6 +39,7 @@ export const UserProvider = ({ children }) => {
           !window.location.pathname.includes("/signup")
         ) {
           navigate("/login");
+          setLoginAlert(true);
         }
       }
     } else {
@@ -44,23 +49,41 @@ export const UserProvider = ({ children }) => {
         !window.location.pathname.includes("/signup")
       ) {
         navigate("/login");
+        setLoginAlert(true);
       }
     }
+    setloading(false);
   };
 
   const logout = () => {
     Cookies.remove("auth-cookie");
+    Cookies.remove("user-data");
     navigate("/login");
     setLogoutAlert("Successfully Logged-Out");
+    setLoginAlert(null);
   };
 
   useEffect(() => {
     console.log("context use effect working");
+    const userData = Cookies.get("user-data");
+    if (userData) {
+      setCurrUser(JSON.parse(userData));
+    }
     verifyUser();
   }, [location.pathname]);
 
   return (
-    <UserContext.Provider value={{ currUser, logout, logoutAlert }}>
+    <UserContext.Provider
+      value={{
+        currUser,
+        loading,
+        logout,
+        logoutAlert,
+        loginAlert,
+        setLoginAlert,
+        setLogoutAlert,
+      }}
+    >
       {children}
     </UserContext.Provider>
   );

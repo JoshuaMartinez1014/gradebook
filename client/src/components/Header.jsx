@@ -6,8 +6,13 @@ import { useUserContext } from "../ctx/UserContext";
 /* import "../styles/global.css"; */
 
 function Header(props) {
-  const { currUser, logout } = useUserContext();
+  const { currUser, logout, loading } = useUserContext();
   console.log({ currUser });
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
+
   return (
     <>
       <Navbar
@@ -59,10 +64,13 @@ function Header(props) {
               <NavLink to="/grades" className="nav-link">
                 Grades
               </NavLink>
-
-              <NavLink to="/classes" className="nav-link">
-                Classes
-              </NavLink>
+              {currUser.isTeacher === false && (
+                <>
+                  <NavLink to="/classes" className="nav-link">
+                    Classes
+                  </NavLink>{" "}
+                </>
+              )}
               {currUser && (
                 <NavLink to="/login" className="nav-link" onClick={logout}>
                   Logout
