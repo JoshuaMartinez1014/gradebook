@@ -54,7 +54,7 @@ function TeacherPage() {
               <p>
                 {teacher.teacher.fname} {teacher.teacher.lname}
               </p>
-              <a href={teacher.teacher.email}>Send Email</a>
+              <a href={`mailto:${teacher.teacher.email}`}>Send Email</a>
             </React.Fragment>
           ))}
       </div>

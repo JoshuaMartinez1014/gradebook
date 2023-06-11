@@ -35,6 +35,7 @@ export const UserProvider = ({ children }) => {
           !window.location.pathname.includes("/signup")
         ) {
           navigate("/login");
+          setCurrUser(null);
         }
       }
     } else {
@@ -44,12 +45,14 @@ export const UserProvider = ({ children }) => {
         !window.location.pathname.includes("/signup")
       ) {
         navigate("/login");
+        setCurrUser(null);
       }
     }
   };
 
   const logout = () => {
     Cookies.remove("auth-cookie");
+    setCurrUser(null);
     navigate("/login");
     setLogoutAlert("Successfully Logged-Out");
   };
