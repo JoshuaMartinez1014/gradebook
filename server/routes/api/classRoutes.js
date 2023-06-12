@@ -1,13 +1,12 @@
 const router = require("express").Router();
 const { User, Grade, Class, Assignment } = require("../../models");
-//const withAuth = require('../../utils/auth');
+
+
 
 // GET all classes
 router.get("/", async (req, res) => {
   try {
     const classData = await Class.find({});
-    //include: Assignment? Grade?
-
     res.status(200).json(classData);
   } catch (err) {
     res.status(500).json(err);
@@ -26,7 +25,6 @@ router.get("/user/:id", async (req, res) => {
         },
       })
       .exec();
-    //include: Assignment? Class?
     res.status(200).json(classData);
   } catch (err) {
     res.status(500).json(err);
@@ -39,7 +37,6 @@ router.get("/teacher/:id", async (req, res) => {
     const classData = await Class.find({ students: req.params.id })
       .populate("teacher")
       .exec();
-    //include: Assignment? Class?
     res.status(200).json(classData);
   } catch (err) {
     res.status(500).json(err);
@@ -52,7 +49,6 @@ router.get("/teach/:id", async (req, res) => {
     const classData = await Class.find({ teacher: req.params.id })
       .populate("assignment")
       .exec();
-    //include: Assignment? Class?
     res.status(200).json(classData);
   } catch (err) {
     res.status(500).json(err);
@@ -63,7 +59,6 @@ router.get("/teach/:id", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const classData = await Class.findById(req.params.id);
-    //include: Assignment? Grade?
     console.log("SINGLE CLASS HIT");
     res.status(200).json(classData);
   } catch (err) {

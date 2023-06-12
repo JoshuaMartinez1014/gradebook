@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { User, Grade, Class } = require("../models");
-//const withAuth = require('../utils/auth');
+
+
 
 // GET route for homepage
 /* router.get('/', async (req, res) => {

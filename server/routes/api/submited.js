@@ -1,13 +1,12 @@
 const router = require('express').Router();
 const { User, Grade, Class, Assignment, Submited } = require('../../models');
-//const withAuth = require('../../utils/auth');
+
 
 
 // GET all Submiteds
 router.get("/", async (req, res) => {
     try {
         const submitedData = await Submited.find({})
-        //include: Assignment? Class?
         res.status(200).json(submitedData);
     } catch (err) {
         res.status(500).json(err);
@@ -19,7 +18,6 @@ router.get("/ungraded", async (req, res) => {
         const submitedData = await Submited.find({isGraded: false })
         .populate("assignment").sort("assignment_name")
       .exec();
-        //include: Assignment? Class?
         res.status(200).json(submitedData);
     } catch (err) {
         res.status(500).json(err);
@@ -30,7 +28,6 @@ router.get("/ungraded", async (req, res) => {
 router.get("/:id", async (req, res) => {
     try {
         const submitedData = await Submited.findById(req.params.id)
-        //include: Assignment? Class?
         res.status(200).json(submitedData);
     } catch (err) {
         res.status(500).json(err);
