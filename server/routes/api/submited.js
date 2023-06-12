@@ -14,6 +14,18 @@ router.get("/", async (req, res) => {
     }
 });
 
+router.get("/ungraded", async (req, res) => {
+    try {
+        const submitedData = await Submited.find({isGraded: false })
+        .populate("assignment").sort("assignment_name")
+      .exec();
+        //include: Assignment? Class?
+        res.status(200).json(submitedData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 // Get a single Submited
 router.get("/:id", async (req, res) => {
     try {

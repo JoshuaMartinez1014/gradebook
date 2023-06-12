@@ -15,6 +15,10 @@ const submitedSchema = new Schema({
     required: true,
     ref: "Assignment",
   },
+  isGraded: {
+    type: Boolean,
+    default: false
+  }
 });
 
 const Submited = model("Submited", submitedSchema);
