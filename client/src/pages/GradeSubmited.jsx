@@ -85,7 +85,9 @@ function GradeSubmitedPage() {
             <div style={{}}>
               <p>
                 Submitted Link:{" "}
-                <a href={`//${submit.submited}`}>Student-Link</a>
+                <a href={`//${submit.submited}`} target="_blank">
+                  {submit.submited}
+                </a>
               </p>
 
               <Form>

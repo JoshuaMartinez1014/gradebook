@@ -90,17 +90,6 @@ html {
   /* Equal width for each cell, 100%/5 cells */
 }
 
-/* CSS for displaying grades */
-.assignment-name {
-  border: 1px solid #555;
-  border-radius: 6px;
-  margin-right: 90%;
-  text-align: center;
-}
-.grade-score {
-  border: 2px solid #38393a;
-  border-radius: 6px;
-}
 
 /* calender */
 tbody {
