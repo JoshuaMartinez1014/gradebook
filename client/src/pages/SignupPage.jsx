@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { Container, Form, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Container, Form, Button, Alert } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
 /* import { SignupPage } from "."; */
 
 function Signup() {
   const [formData, setFormData] = useState({ isTeacher: false });
+  const [failLogin, setFailLogin] = useState(false);
 
   function handleChange(e) {
     if (e.target.name === "role") {
@@ -31,7 +32,14 @@ function Signup() {
       },
       body: JSON.stringify(formData),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          // If the status code indicates a failed login attempt, set failLogin to true
+          setFailLogin(true);
+          return;
+        }
+        return response.json();
+      })
       .then((data) => {
         console.log(data);
         window.location.href = "/";
@@ -110,7 +118,6 @@ function Signup() {
                   })
                 }
                 value="true"
-                required
                 label="Select if Teacher"
               />
             </Form.Group>
@@ -118,6 +125,20 @@ function Signup() {
             <Button variant="primary" type="submit">
               Submit
             </Button>
+            {failLogin && (
+              <>
+                <br />
+                <Alert
+                  variant="danger"
+                  onClose={() => setFailLogin(false)}
+                  dismissible
+                >
+                  {" "}
+                  {/* Bootstrap Alert */}
+                  Login Failed!
+                </Alert>
+              </>
+            )}
             <br />
             <br />
             <Link to="/login">Already Have an Account?</Link>
