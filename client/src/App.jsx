@@ -14,6 +14,7 @@ import {
   AssignmentPage,
   UserPage,
   UpdateUserPage,
+  GradeSubmitedPage
 } from "./pages";
 import { Header, Footer, SideNav } from "./components";
 import "./styles/global.css";
@@ -40,6 +41,7 @@ function App() {
                   <Route path="/assignment/:id" element={<AssignmentPage />} />
                   <Route path="/updateuser" element={<UpdateUserPage />} />
                   <Route path="user" element={<UserPage />} />
+                  <Route path="/submitted" element={<GradeSubmitedPage />} />
                 </Routes>{" "}
               </div>
             </div>
