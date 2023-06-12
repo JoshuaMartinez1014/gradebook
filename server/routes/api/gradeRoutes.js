@@ -26,9 +26,23 @@ router.get("/:id", async (req, res) => {
 });
 
 // Create a grade
+// router.post('/', async (req, res) => {
+//     try {
+//         const newGrade = await Grade.create({ ...req.body });
+//         res.status(200).json(newGrade);
+//     } catch (err) {
+//         res.status(400).json(err);
+//     }
+// });
+
 router.post('/', async (req, res) => {
     try {
-        const newGrade = await Grade.create({ ...req.body });
+        const newGrade = await Grade.create({
+            grade: req.body.grade,
+            student: req.body.student,
+            assignment: req.body.assignment
+        });
+        Assignment.findByIdAndUpdate(req.body.assignment, { $push: { grade: newGrade._id } })
         res.status(200).json(newGrade);
     } catch (err) {
         res.status(400).json(err);
