@@ -81,7 +81,7 @@ function GradesPage() {
                       <h3 style={{}}>{hw.assignment_name}</h3>
                       {hw.grade.map((score) => (
                         <>
-                          <p
+                          <h5
                             key={score._id}
                             style={{
                               backgroundColor: getGradeColor(score.grade),
@@ -89,8 +89,8 @@ function GradesPage() {
                               borderRadius: "15px",
                             }}
                           >
-                            Score {score.grade}
-                          </p>
+                            Score: {score.grade} / 100
+                          </h5>
                         </>
                       ))}{" "}
                     </div>

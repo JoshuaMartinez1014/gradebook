@@ -40,10 +40,11 @@ function SubmitedAssignment(props) {
       <h2 style={{}}>{props.data[0]}</h2>
       <div
         style={{
-          border: "solid black 4px",
+          border: "solid black 2px",
           padding: "15px",
           margin: "15px",
           borderRadius: "15px",
+          backgroundColor: "lightGrey",
         }}
       >
         <h3 style={{ borderBottom: "solid 2px black", paddingBottom: "8px" }}>

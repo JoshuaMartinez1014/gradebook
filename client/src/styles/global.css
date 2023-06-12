@@ -170,7 +170,7 @@ thead {
 @media (max-width: 330px) {
   #page-content {
     justify-content: start;
-    padding-left: 15px;
+    /*  padding-left: 15px; */
   }
 }
 
