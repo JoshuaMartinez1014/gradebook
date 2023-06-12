@@ -1,13 +1,12 @@
 const router = require('express').Router();
 const { User, Grade, Class, Assignment } = require('../../models');
-//const withAuth = require('../../utils/auth');
+
 
 
 // GET all assignments
 router.get("/", async (req, res) => {
     try {
         const assignmentData = await Assignment.find({})
-        //include: Grade? Class?
         res.status(200).json(assignmentData);
     } catch (err) {
         res.status(500).json(err);
@@ -20,7 +19,6 @@ router.get("/:id", async (req, res) => {
         const assignmentData = await Assignment.findById(req.params.id).
         populate("grade").
         exec();
-        //include: Grade? Class?
         res.status(200).json(assignmentData);
     } catch (err) {
         res.status(500).json(err);
