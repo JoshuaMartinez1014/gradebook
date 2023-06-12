@@ -7,7 +7,9 @@ import "../styles/global.css";
 
 function GradeSubmitedPage() {
   const { currUser } = useUserContext();
-  console.log(currUser);
+  const [search, setSearch] = useState("");
+  const [submitedWork, setSubmitedWork] = useState("");
+  
 
   const [ungradedData, setUngradedData] = useState();
   async function lookupUngraded() {
@@ -17,6 +19,26 @@ function GradeSubmitedPage() {
     console.log(results);
     setUngradedData(results);
   }
+
+  const submitAssignment = async () => {
+    try {
+      console.log(submitedWork);
+      const query = await fetch("/api/grade", {
+        method: "post",
+        body: JSON.stringify(submitedWork),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const result = await query.json();
+      console.log(result);
+      if (result && result.status === "success") {
+        window.location.reload();
+      }
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
 
   useEffect(() => {
     console.log("context use effect working");
@@ -46,19 +68,22 @@ function GradeSubmitedPage() {
                   height: "60px",
                   fontSize: "1.4rem",
                 }}
-                type="text"
-                name=""
-                value=""
+                type="number"
+                name="score"
+                value={search}
                 placeholder="Submit Score"
-                /* onChange={(e) => {
+                onChange={(e) => {
                   setSearch(e.target.value);
                   setSubmitedWork({
-                    submited: e.target.value,
+                    grade: e.target.value,
+                    student: submit.student,
+                    assignment: submit.assignment._id,
+                    submitedId: submit._id,
                   });
-                }} */
+                }}
               />{" "}
               <br />{" "}
-              <Button variant="primary" /* onClick={submitAssignment} */>
+              <Button variant="primary" onClick={submitAssignment}>
                 submit assignment!
               </Button>
             </Form>

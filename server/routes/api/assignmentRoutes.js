@@ -18,8 +18,8 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
     try {
         const assignmentData = await Assignment.findById(req.params.id).
-        populate("grade").
-        exec();
+            populate("grade").
+            exec();
         //include: Grade? Class?
         res.status(200).json(assignmentData);
     } catch (err) {
@@ -39,8 +39,12 @@ router.post('/', async (req, res) => {
 
 // router.post('/:id', async (req, res) => {
 //     try {
-//         const newGrade = await Grade.create({ ...req.body });
-//         Assignment.updateOne(req.param.id)
+//         const newGrade = await Grade.create({
+//             grade: req.body.grade,
+//             student: req.body.student,
+//             assignment: req.body.assignment
+//         });
+//         Assignment.findByIdAndUpdate(req.body.assignment, { $push: { grade: newGrade._id } })
 //         res.status(200).json(newGrade);
 //     } catch (err) {
 //         res.status(400).json(err);
