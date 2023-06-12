@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { Container, Form, Button, Alert } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useUserContext } from "../ctx/UserContext";
 
 function Login() {
   const [formData, setFormData] = useState({});
+  const [failLogin, setFailLogin] = useState(false);
   const [showAlert, setShowAlert] = useState(true);
   const { logoutAlert, loginAlert, setLoginAlert, setLogoutAlert } =
     useUserContext();
+  const navigate = useNavigate();
 
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -23,12 +25,33 @@ function Login() {
       },
       body: JSON.stringify(formData),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          // If the status code indicates a failed login attempt, set failLogin to true
+          setFailLogin(true);
+          return;
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        navigate("/");
+      })
+      .catch((error) => {
+        setFailLogin(true);
+        console.log(error);
+      });
+  }
+
+  /*  .then((response) => response.json())
       .then((data) => {
         console.log(data);
         window.location.href = "/";
-      });
-  }
+      })
+      .catch((error) => {
+        setFailLogin(true);
+        console.log(error);
+      }); */
 
   return (
     <>
@@ -69,7 +92,6 @@ function Login() {
                 required
               />
             </Form.Group>
-
             <Form.Group className="mb-3">
               <Form.Label>Password</Form.Label>
               <Form.Control
@@ -80,11 +102,24 @@ function Login() {
                 required
               />
             </Form.Group>
-
             <Button variant="primary" type="submit">
               Submit
-            </Button>
+            </Button>{" "}
             <br />
+            {failLogin && (
+              <>
+                <br />
+                <Alert
+                  variant="danger"
+                  onClose={() => setFailLogin(false)}
+                  dismissible
+                >
+                  {" "}
+                  {/* Bootstrap Alert */}
+                  Login Failed!
+                </Alert>
+              </>
+            )}
             <br />
             <Link to="/signup">Or Sign Up Here!</Link>
           </Form>
