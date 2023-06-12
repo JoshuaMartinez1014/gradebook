@@ -1,30 +1,42 @@
 [
-    {
-        "_id": "6480aeabce912674ff0c0123",
-        "assignment_name": "HW 1",
-        "due_date": "2023-06-01",
-        "class": "6480ad917db945d3c0c54906",
-        "grade": ["6482551b9bcdbf29c8140396", "6482557181620c3bf9cafb0d", "6482557db3fb86b093249d7f"]
-    },
-    {
-        "_id": "6480aebd9176cda0c1818877",
-        "assignment_name": "HW 2",
-        "due_date": "2023-06-02",
-        "class": "6480ad917db945d3c0c54906",
-        "grade": ["648255857a771902906992cb", "6482558db4554c110629e2bb", "64825595ddd3b56923daf697"]
-    },
-    {
-        "_id": "6480aeccf52dfdd1ad854c7a",
-        "assignment_name": "HW 3",
-        "due_date": "2023-06-07",
-        "class": "6480ad917db945d3c0c54906",
-        "grade": ["6482559f184949b67c8f6308", "648255a6e9d050b715d6b7e1", "648255afc840b33ca88f086a"]
-    },
-    {
-        "_id": "6480aed724805ca25d2c3958",
-        "assignment_name": "HW 4",
-        "due_date": "2023-06-15",
-        "class": "6480ad917db945d3c0c54906",
-        "grade": []
-    }
+  {
+    "_id": "6480aeabce912674ff0c0123",
+    "assignment_name": "Math Problem Set",
+    "due_date": "2023-06-01",
+    "class": "6480ad917db945d3c0c54906",
+    "grade": [
+      "6482551b9bcdbf29c8140396",
+      "6482557181620c3bf9cafb0d",
+      "6482557db3fb86b093249d7f"
+    ]
+  },
+  {
+    "_id": "6480aebd9176cda0c1818877",
+    "assignment_name": "English Essay",
+    "due_date": "2023-06-02",
+    "class": "6480ad917db945d3c0c54906",
+    "grade": [
+      "648255857a771902906992cb",
+      "6482558db4554c110629e2bb",
+      "64825595ddd3b56923daf697"
+    ]
+  },
+  {
+    "_id": "6480aeccf52dfdd1ad854c7a",
+    "assignment_name": "Science Experiment Report",
+    "due_date": "2023-06-07",
+    "class": "6480ad917db945d3c0c54906",
+    "grade": [
+      "6482559f184949b67c8f6308",
+      "648255a6e9d050b715d6b7e1",
+      "648255afc840b33ca88f086a"
+    ]
+  },
+  {
+    "_id": "6480aed724805ca25d2c3958",
+    "assignment_name": "History Research Paper",
+    "due_date": "2023-06-15",
+    "class": "6480ad917db945d3c0c54906",
+    "grade": []
+  }
 ]
