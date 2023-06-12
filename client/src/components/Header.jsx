@@ -93,9 +93,7 @@ function Header(props) {
                   {currUser.fname} {currUser.lname}
                 </NavLink>
               )}
-              <NavLink to="/grades" className="nav-link">
-                Grades
-              </NavLink>
+
               {currUser && (
                 <NavLink to="/login" className="nav-link" onClick={logout}>
                   Logout

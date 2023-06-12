@@ -55,23 +55,33 @@ function GradesPage() {
       >
         {gradeData &&
           gradeData.map((grade) => (
-            <>
+            <div style={{}}>
               <div key={grade._id}>
-                <h2 style={{}}> {grade.class_name}</h2>
+                <h2
+                  style={{
+                    borderBottom: "solid black 4px",
+                    paddingBottom: "16px",
+                  }}
+                >
+                  {" "}
+                  {grade.class_name}
+                </h2>
+                <br />
                 <div style={{}}>
                   {grade.assignment.map((hw) => (
                     <div
                       style={{
                         backgroundColor: "lightGrey",
                         padding: "10px",
-                        borderRadius: "15px",
+                        borderRadius: "20px",
+                        marginBottom: "20px",
                       }}
                       key={hw._id}
                     >
                       <h3 style={{}}>{hw.assignment_name}</h3>
                       {hw.grade.map((score) => (
                         <>
-                          <p
+                          <h5
                             key={score._id}
                             style={{
                               backgroundColor: getGradeColor(score.grade),
@@ -79,8 +89,8 @@ function GradesPage() {
                               borderRadius: "15px",
                             }}
                           >
-                            Score {score.grade}
-                          </p>
+                            Score: {score.grade} / 100
+                          </h5>
                         </>
                       ))}{" "}
                     </div>
@@ -88,7 +98,7 @@ function GradesPage() {
                 </div>
               </div>
               <br />
-            </>
+            </div>
           ))}
       </div>
     </div>

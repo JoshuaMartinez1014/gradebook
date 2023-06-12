@@ -24,7 +24,7 @@ function SideNav(props) {
         nav.removeEventListener("wheel", scrollHorizontally);
       };
     }
-  }, []);
+  }, [currUser, loading]);
 
   if (loading) {
     return (
@@ -40,6 +40,13 @@ function SideNav(props) {
       {currUser ? (
         currUser.isTeacher === false ? (
           <>
+            <NavLink
+              to="/grades"
+              className="sidenav-link nav-link"
+              activeclassname="active"
+            >
+              Grades &nbsp;&nbsp;&nbsp;&nbsp;&gt;
+            </NavLink>
             <NavLink
               className="sidenav-link nav-link"
               activeclassname="active"

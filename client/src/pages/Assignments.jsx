@@ -53,9 +53,14 @@ function AssignmentsPage() {
                 <strong>{assignments.class_name}</strong>
               </h2>
               {assignments.assignment.map((hw) => (
-                <p key={hw._id}>
-                  <a href={`assignment/${hw._id}`}>{hw.assignment_name}</a>
-                </p>
+                <h4 key={hw._id}>
+                  <a
+                    style={{ textDecoration: "none" }}
+                    href={`assignment/${hw._id}`}
+                  >
+                    -{hw.assignment_name}
+                  </a>
+                </h4>
               ))}
             </React.Fragment>
           ))}

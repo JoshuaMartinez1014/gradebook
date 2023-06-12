@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "react-bootstrap/Button";
 import { useUserContext } from "../ctx/UserContext";
 import { useState, useEffect } from "react";
 import "../styles/global.css";
@@ -48,13 +49,25 @@ function TeacherPage() {
         {teacherData &&
           teacherData.map((teacher) => (
             <React.Fragment key={teacher._id}>
-              <h2>
+              <h2
+                style={{
+                  borderBottom: "solid black 4px",
+                  paddingBottom: "16px",
+                }}
+              >
                 <strong> {teacher.class_name}</strong>
-              </h2>
-              <p>
-                {teacher.teacher.fname} {teacher.teacher.lname}
-              </p>
-              <a href={`mailto:${teacher.teacher.email}`}>Send Email</a>
+              </h2>{" "}
+              <br />
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <h3>
+                  {teacher.teacher.fname} {teacher.teacher.lname}
+                </h3>
+
+                <a href={`mailto:${teacher.teacher.email}`}>
+                  {" "}
+                  <Button variant="dark">Send Email</Button>
+                </a>
+              </div>
             </React.Fragment>
           ))}
       </div>
