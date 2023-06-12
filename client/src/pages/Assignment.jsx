@@ -35,13 +35,12 @@ function AssignmentPage() {
         setSubmitedData(true);
       }
     }
-    setAssignmentData([results.assignment_name, results._id]);
   }
   useEffect(() => {
     console.log("context use effect working");
     if (currUser && currUser._id) {
-      lookupSubmited();
       lookupAssignment();
+      lookupSubmited();
     }
   }, [currUser]);
   return (
