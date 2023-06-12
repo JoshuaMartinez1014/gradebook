@@ -55,7 +55,7 @@ function GradeSubmitedPage() {
           <div key={submit._id}>
             <h2> {submit.assignment.assignment_name}</h2>
             <p>
-              Link to assignment <a href={submit.submited}>LINK</a>
+              Link to assignment <a href={submit.submited} target="_blank">{submit.submited}</a>
             </p>
 
             <p>
