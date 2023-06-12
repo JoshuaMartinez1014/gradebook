@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Grade, Class, Assignment } = require('../../models');
+const { User, Grade, Class, Assignment, Submited } = require('../../models');
 //const withAuth = require('../../utils/auth');
 
 
@@ -42,8 +42,9 @@ router.post('/', async (req, res) => {
             student: req.body.student,
             assignment: req.body.assignment
         });
-        Assignment.findByIdAndUpdate(req.body.assignment, { $push: { grade: newGrade._id } })
-        res.status(200).json(newGrade);
+        const updateAssignment = await Assignment.findByIdAndUpdate(req.body.assignment, { $push: { grade: newGrade._id } })
+        const updateSubmited = await Submited.findByIdAndUpdate(req.body.submitedId, { isGraded: true } )
+        res.status(200).json({ status: "success", payload: newGrade});
     } catch (err) {
         res.status(400).json(err);
     }
