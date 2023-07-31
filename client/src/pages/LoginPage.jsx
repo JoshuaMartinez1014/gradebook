@@ -6,7 +6,7 @@ import { useUserContext } from "../ctx/UserContext";
 function Login() {
   const [formData, setFormData] = useState({});
   const [failLogin, setFailLogin] = useState(false);
-  const [showAlert, setShowAlert] = useState(true);
+  /*  const [showAlert, setShowAlert] = useState(true); */
   const { logoutAlert, loginAlert, setLoginAlert, setLogoutAlert } =
     useUserContext();
   const navigate = useNavigate();
@@ -29,6 +29,8 @@ function Login() {
         if (!response.ok) {
           // If the status code indicates a failed login attempt, set failLogin to true
           setFailLogin(true);
+          console.log("failedLogin1");
+          alert("Login Failed");
           return;
         }
         return response.json();
@@ -40,6 +42,7 @@ function Login() {
       .catch((error) => {
         setFailLogin(true);
         console.log(error);
+        console.log("failedLogin2");
       });
   }
 
@@ -55,7 +58,6 @@ function Login() {
 
   return (
     <>
-      {" "}
       <div style={{ marginTop: "50px", flexGrow: 0.5, flexBasis: "20%" }}>
         {logoutAlert && (
           <Alert
@@ -68,17 +70,7 @@ function Login() {
             Successfully Logged out!
           </Alert>
         )}
-        {loginAlert && (
-          <Alert
-            variant="success"
-            onClose={() => setLoginAlert(false)}
-            dismissible
-          >
-            {" "}
-            {/* Bootstrap Alert */}
-            Please Login Before Accessing the Site!
-          </Alert>
-        )}
+
         <h1 style={{ marginLeft: "1%" }}>Login</h1>
         <Container className=" mt-3">
           <Form className="mt-3" style={{}} onSubmit={handleSubmit}>
@@ -124,6 +116,26 @@ function Login() {
             <Link to="/signup">Or Sign Up Here!</Link>
           </Form>
         </Container>
+        <div
+          style={{
+            padding: "15px",
+            backgroundColor: "white",
+            border: "solid yellow 4px",
+            marginTop: "20px",
+            lineHeight: "30px",
+            fontSize: "1.2rem",
+          }}
+        >
+          <strong
+            style={{ paddingBottom: "3px", borderBottom: "solid 2px black" }}
+          >
+            To See Example:{" "}
+          </strong>
+          <br /> <br />
+          <strong>User:</strong> mike.smith@email.com
+          <br />
+          <strong>Password:</strong> password
+        </div>
       </div>
     </>
   );

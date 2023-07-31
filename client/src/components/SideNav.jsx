@@ -52,7 +52,7 @@ function SideNav(props) {
               activeclassname="active"
               to="/syllabus"
             >
-              Syllabus &nbsp;&nbsp;&nbsp;&nbsp;&gt;
+              Classes &nbsp;&nbsp;&nbsp;&nbsp;&gt;
             </NavLink>
             <NavLink
               className="sidenav-link nav-link"

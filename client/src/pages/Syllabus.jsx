@@ -41,7 +41,7 @@ function SyllabusPage() {
           boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.6)",
         }}
       >
-        Syllabus
+        Classes
       </h1>
       <br />
       <div

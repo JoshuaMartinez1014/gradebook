@@ -38,6 +38,7 @@ export const UserProvider = ({ children }) => {
           !window.location.pathname.includes("/login") &&
           !window.location.pathname.includes("/signup")
         ) {
+          console.log("sending to login page");
           navigate("/login");
           setLoginAlert(true);
           setCurrUser(null);
