@@ -1,0 +1,19 @@
+[
+  {
+    "_id": "6480ad917db945d3c0c54906",
+    "class_name": "Full Stack Javascript",
+    "syllabus": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sagittis urna et dolor laoreet interdum. Nullam sagittis turpis in justo blandit convallis et ornare elit. Proin vel metus nec velit dapibus sagittis ut id quam. Vivamus eu euismod tortor, quis rhoncus nisl. Aliquam erat volutpat. Nam dictum, mi vitae ultricies sollicitudin, mi eros sagittis massa, ut porta nibh nulla ac eros. In luctus velit sit amet ultricies molestie. Duis consectetur volutpat sollicitudin. Maecenas tortor sapien, volutpat vel sem eu, posuere dapibus sapien. Donec condimentum at lorem non aliquam.",
+    "teacher": "6480ad2825cad0db06879f4c",
+    "students": [
+      "6480ad1958fcb8a932217b9f",
+      "6480acff317e874d41a767cb",
+      "6480ace22c3f10a1b7355ae0"
+    ],
+    "assignment": [
+      "6480aeabce912674ff0c0123",
+      "6480aebd9176cda0c1818877",
+      "6480aeccf52dfdd1ad854c7a",
+      "6480aed724805ca25d2c3958"
+    ]
+  }
+]

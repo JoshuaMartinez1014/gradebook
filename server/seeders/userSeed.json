@@ -1,0 +1,34 @@
+[
+    {
+      "_id" : "6480ace22c3f10a1b7355ae0",
+      "fname": "Mike",
+      "lname": "Smith",
+      "email": "mike.smith@email.com",
+      "password": "password",
+      "isTeacher": "false"
+    },
+    {
+      "_id" : "6480acff317e874d41a767cb",
+      "fname": "Joe",
+      "lname": "Hunt",
+      "email": "joe.hunt@email.com",
+      "password": "password",
+      "isTeacher": "false"
+    },
+    {
+      "_id" : "6480ad1958fcb8a932217b9f",
+      "fname": "Bob",
+      "lname": "White",
+      "email": "bob.white@email.com",
+      "password": "password",
+      "isTeacher": "false"
+    },
+    {
+      "_id" : "6480ad2825cad0db06879f4c",
+      "fname": "Gary",
+      "lname": "Almes",
+      "email": "gary.almes@email.com",
+      "password": "password",
+      "isTeacher": "true"
+    }
+]
